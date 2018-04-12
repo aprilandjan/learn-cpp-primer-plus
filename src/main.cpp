@@ -1,13 +1,14 @@
 #include <iostream>
-#include "pointer.h"
-#include "vector_and_array.h"
-#include "loop_and_relation.h"
-#include "../chapter6/use_cctypes.h"
-#include "../chapter6/cin_fish.h"
+#include "chapter/pointer.h"
+#include "chapter/vector_and_array.h"
+#include "chapter/loop_and_relation.h"
+#include "chapter6/use_cctypes.h"
+#include "chapter6/cin_fish.h"
+#include "chapter6/15_outfile.h"
 
 
 int main() {
-    using namespace std;
+//    using namespace std;
 
 //    pointer();
 //    use_new();
@@ -26,8 +27,8 @@ int main() {
 
     //  chapter6
 //    use_ccytpes();
-    cin_fish();
-
+//    cin_fish();
+    outfile();
 
     return 0;
 }
