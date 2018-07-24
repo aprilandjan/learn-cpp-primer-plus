@@ -5,7 +5,7 @@
 #include "chapter6/use_cctypes.h"
 #include "chapter6/cin_fish.h"
 #include "chapter6/15_outfile.h"
-
+#include "chapter6/16_inputfile.h"
 
 int main() {
 //    using namespace std;
@@ -28,7 +28,8 @@ int main() {
     //  chapter6
 //    use_ccytpes();
 //    cin_fish();
-    outfile();
+//    outfile();
+    inputfile();
 
     return 0;
 }
