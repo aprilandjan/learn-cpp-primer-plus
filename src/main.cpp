@@ -8,6 +8,7 @@
 #include "chapter6/16_inputfile.h"
 #include "chapter7/5_arr_func.h"
 #include "chapter7/6_arr_func_2.h"
+#include "chapter7/7_arr_func_3.h"
 
 int main() {
 //    using namespace std;
@@ -33,7 +34,8 @@ int main() {
 //    outfile();
 //    inputfile();
 //    arr_func();
-    arr_func_2();
+//    arr_func_2();
+    arr_func_3();
 
     return 0;
 }
