@@ -9,6 +9,7 @@
 #include "chapter7/5_arr_func.h"
 #include "chapter7/6_arr_func_2.h"
 #include "chapter7/7_arr_func_3.h"
+#include "chapter7/8_arr_func_range.h"
 
 int main() {
 //    using namespace std;
@@ -35,7 +36,8 @@ int main() {
 //    inputfile();
 //    arr_func();
 //    arr_func_2();
-    arr_func_3();
+//    arr_func_3();
+    arr_func_range();
 
     return 0;
 }
