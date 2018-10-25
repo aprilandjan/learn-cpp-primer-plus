@@ -10,6 +10,8 @@
 #include "chapter7/6_arr_func_2.h"
 #include "chapter7/7_arr_func_3.h"
 #include "chapter7/8_arr_func_range.h"
+#include "chapter7/9_count_char_in_string.h"
+#include "chapter7/10_create_string.h"
 
 int main() {
 //    using namespace std;
@@ -37,7 +39,9 @@ int main() {
 //    arr_func();
 //    arr_func_2();
 //    arr_func_3();
-    arr_func_range();
+//    arr_func_range();
+//    count_char_in_string();
+    create_string();
 
     return 0;
 }
