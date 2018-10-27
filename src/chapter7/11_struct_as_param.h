@@ -8,3 +8,4 @@
 #endif //LEARN_11_STRUCT_AS_PARAM_H
 
 int show_travel_time();
+int input_and_covert_coord();

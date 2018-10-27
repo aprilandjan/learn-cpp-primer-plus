@@ -43,7 +43,8 @@ int main() {
 //    arr_func_range();
 //    count_char_in_string();
 //    create_string();
-    show_travel_time();
+//    show_travel_time();
+    input_and_covert_coord();
 
     return 0;
 }
