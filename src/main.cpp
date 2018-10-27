@@ -12,6 +12,7 @@
 #include "chapter7/8_arr_func_range.h"
 #include "chapter7/9_count_char_in_string.h"
 #include "chapter7/10_create_string.h"
+#include "chapter7/11_struct_as_param.h"
 
 int main() {
 //    using namespace std;
@@ -41,7 +42,8 @@ int main() {
 //    arr_func_3();
 //    arr_func_range();
 //    count_char_in_string();
-    create_string();
+//    create_string();
+    show_travel_time();
 
     return 0;
 }
