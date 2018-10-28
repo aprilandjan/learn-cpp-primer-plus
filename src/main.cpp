@@ -13,6 +13,7 @@
 #include "chapter7/9_count_char_in_string.h"
 #include "chapter7/10_create_string.h"
 #include "chapter7/11_struct_as_param.h"
+#include "chapter7/12_string_object.h"
 
 int main() {
 //    using namespace std;
@@ -44,7 +45,8 @@ int main() {
 //    count_char_in_string();
 //    create_string();
 //    show_travel_time();
-    input_and_covert_coord();
+//    input_and_covert_coord()
+    input_and_output_lines();
 
     return 0;
 }
