@@ -15,6 +15,7 @@
 #include "chapter7/11_struct_as_param.h"
 #include "chapter7/12_string_object.h"
 #include "chapter7/13_array_object.h"
+#include "chapter7/14_recursive_func.h"
 
 int main() {
 //    using namespace std;
@@ -48,7 +49,9 @@ int main() {
 //    show_travel_time();
 //    input_and_covert_coord()
 //    input_and_output_lines();
-    input_and_output_arrays();
+//    input_and_output_arrays();
+//    show_count_down();
+    draw_ruler();
 
     return 0;
 }
