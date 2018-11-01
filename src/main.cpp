@@ -18,6 +18,7 @@
 #include "chapter7/14_recursive_func.h"
 #include "chapter7/15_pointer_to_functions.h"
 #include "chapter8/1_inline_functions.h"
+#include "chapter8/2_variable_reference.h"
 
 int main() {
 //    using namespace std;
@@ -55,7 +56,8 @@ int main() {
 //    show_count_down();
 //    draw_ruler();
 //    estimate_time_multiways();
-    inline_square();
+//    inline_square();
+    try_reference();
 
     return 0;
 }
