@@ -6,3 +6,5 @@
 #define LEARN_1_INLINE_FUNCTIONS_H
 
 #endif //LEARN_1_INLINE_FUNCTIONS_H
+
+int inline_square();

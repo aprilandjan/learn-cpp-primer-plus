@@ -17,6 +17,7 @@
 #include "chapter7/13_array_object.h"
 #include "chapter7/14_recursive_func.h"
 #include "chapter7/15_pointer_to_functions.h"
+#include "chapter8/1_inline_functions.h"
 
 int main() {
 //    using namespace std;
@@ -53,7 +54,8 @@ int main() {
 //    input_and_output_arrays();
 //    show_count_down();
 //    draw_ruler();
-    estimate_time_multiways();
+//    estimate_time_multiways();
+    inline_square();
 
     return 0;
 }
