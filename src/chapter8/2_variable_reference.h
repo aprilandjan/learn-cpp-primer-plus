@@ -9,3 +9,4 @@
 
 int try_reference();
 int swap_variables();
+int structure_reference();

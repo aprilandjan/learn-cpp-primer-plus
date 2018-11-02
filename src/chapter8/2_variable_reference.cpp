@@ -45,6 +45,7 @@ void swap_by_reference(int & r1, int & r2) {
     r2 = temp;
 }
 
+
 int swap_variables() {
     using namespace std;
     int a = 3;
@@ -56,5 +57,87 @@ int swap_variables() {
     //  直接传递原变量，自动为它创建一份作用在函数体内的引用？
     swap_by_reference(a, b);
     cout << "After swap by reference, a = " << a << "; b = " << b << endl;
+}
+
+/* reference of structure*/
+#include <string>
+
+struct dota_record {
+    std::string name;
+    int played;
+    int win;
+    float rate;
+};
+
+//  show the players dota-play-record, use *const* in params
+void display_record (const dota_record & r) {
+    std::cout << "Player [" << r.name << "] win [" << r.win << "] games in [" << r.played << "] plays at a rate of [" << r.rate << "%].\n";
+}
+
+//
+void update_record(dota_record & r) {
+    if (r.played == 0) {
+        r.rate = 0;
+    } else {
+        //  int / int = int, so had to turn it to float first.
+        r.rate = 100.0f * float(r.win) / float(r.played);
+    }
+}
+
+//  return a structure reference
+dota_record & accumulate(dota_record & target, const dota_record & source) {
+    //  first param is not const, so we can modify it.
+    target.played += source.played;
+    target.win += source.win;
+    update_record(target);
+    return target;
+}
+
+
+int structure_reference() {
+    //  initialized records. Defaultly, the un-initial members are set to 0
+    dota_record one = {
+            "Albert",
+            100,
+            20,
+    };
+    dota_record two = {
+            "Belly",
+            21,
+            1,
+    };
+    dota_record three = {
+            "Carl",
+            0,
+            0,
+    };
+    dota_record total = {
+            "TOTAL",
+            0,
+            0,
+    };
+    //  un-initialized record
+    dota_record dump;
+
+    display_record(one);
+    update_record(one);
+    display_record(one);
+
+    update_record(two);
+    display_record(two);
+
+    update_record(three);
+    display_record(three);
+
+    display_record(total);
+
+    //  accumulate;
+    accumulate(total, one);
+    display_record(total);
+    display_record(accumulate(accumulate(total, two), three));
+
+    //  test with the *dump* record
+    std::cout << "---------- dump ----------\n";
+    display_record(dump);
 }
 

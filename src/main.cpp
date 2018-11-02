@@ -58,7 +58,8 @@ int main() {
 //    estimate_time_multiways();
 //    inline_square();
 //    try_reference();
-    swap_variables();
+//    swap_variables();
+    structure_reference();
 
     return 0;
 }
