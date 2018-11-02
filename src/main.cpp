@@ -57,7 +57,8 @@ int main() {
 //    draw_ruler();
 //    estimate_time_multiways();
 //    inline_square();
-    try_reference();
+//    try_reference();
+    swap_variables();
 
     return 0;
 }

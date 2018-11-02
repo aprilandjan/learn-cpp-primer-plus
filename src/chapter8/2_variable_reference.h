@@ -8,3 +8,4 @@
 #endif //LEARN_2_VARIABLE_REFERENCE_H
 
 int try_reference();
+int swap_variables();
