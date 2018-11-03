@@ -6,7 +6,7 @@
 
 #include "iostream"
 
-int try_reference() {
+void try_reference() {
     using namespace std;
     int rat = 100;
     //  define a reference refer to specific int "rat"
@@ -46,7 +46,7 @@ void swap_by_reference(int & r1, int & r2) {
 }
 
 
-int swap_variables() {
+void swap_variables() {
     using namespace std;
     int a = 3;
     int b = 4;
@@ -94,7 +94,7 @@ dota_record & accumulate(dota_record & target, const dota_record & source) {
 }
 
 
-int structure_reference() {
+void structure_reference() {
     //  initialized records. Defaultly, the un-initial members are set to 0
     dota_record one = {
             "Albert",
