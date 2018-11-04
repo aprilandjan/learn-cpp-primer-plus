@@ -141,3 +141,46 @@ void structure_reference() {
     display_record(dump);
 }
 
+/* modify string using reference */
+#include "string"
+std::string mod_string_by_creating_temp(const std::string & s1, const std::string & s2) {
+    std::string temp;
+    temp = s2 + s1 + s2;
+    //  返回一份 string 的复制
+    return temp;
+}
+
+std::string & mod_string_by_change_input(std::string & s1, const std::string & s2) {
+    //  直接修改原字符串, 并返回原字符串的引用
+    s1 = s2 + s1 + s2;
+    return s1;
+}
+
+std::string & mod_string_and_return_temp_ref(std::string & s1, const std::string & s2) {
+    std::string temp;
+    temp = s2 + s1 + s2;
+    //  返回临时变量内的引用
+    return temp;
+}
+
+void modify_string() {
+    using namespace std;
+    string input;
+    cout << "Enter the string you want to modify:\n";
+    getline(cin, input);
+    cout << "You just entered: " << input << endl;
+
+    string result;
+    result = mod_string_by_creating_temp(input, "!!!");
+    cout << "V1: mod by creating temp: " <<  result << ", the origin input: " << input << "\n";
+
+    result = mod_string_by_change_input(input, "@@@");
+    cout << "V2: mod by change input: " <<  result << ", the origin input: " << input << "\n";
+
+    result = mod_string_and_return_temp_ref(input, "###");
+    // 能看到预期的输出只是因为运气好，栈上的临时变量没有被干扰或者 wipe
+    // https://stackoverflow.com/questions/2744264/returning-a-reference-to-a-local-or-temporary-variable
+    cout << "V2: mod and return temp variable in function: " <<  result << ", the origin input: " << input << "\n";
+}
+
+

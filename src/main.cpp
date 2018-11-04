@@ -59,7 +59,8 @@ int main() {
 //    inline_square();
 //    try_reference();
 //    swap_variables();
-    structure_reference();
+//    structure_reference();
+    modify_string();
 
     return 0;
 }
