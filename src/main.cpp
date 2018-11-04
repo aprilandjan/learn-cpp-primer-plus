@@ -60,7 +60,8 @@ int main() {
 //    try_reference();
 //    swap_variables();
 //    structure_reference();
-    modify_string();
+//    modify_string();
+    multiple_streams();
 
     return 0;
 }

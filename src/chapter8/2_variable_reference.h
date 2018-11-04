@@ -11,3 +11,4 @@ void try_reference();
 void swap_variables();
 void structure_reference();
 void modify_string();
+void multiple_streams();

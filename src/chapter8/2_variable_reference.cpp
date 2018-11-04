@@ -183,4 +183,61 @@ void modify_string() {
     cout << "V2: mod and return temp variable in function: " <<  result << ", the origin input: " << input << "\n";
 }
 
+/* file stream and output streams */
+#include "fstream" // file-stream
+#include "cstdlib" // c-std-lib?
 
+const int F_LIMIT = 5;
+
+//  fe[], n 是传递数组需要的
+void write_file(std::ostream & os, double focal, const double fe[], int n) {
+    using namespace std;
+    //  设定输出的格式
+    std::ios_base::fmtflags initial;
+    initial = os.setf(ios_base::fixed);
+    //  各种格式化的输入设定
+    os.precision(0);
+    //  写入到 ostream 对象里
+    os << "Focal length of objectuve: " << focal << " mm\n";
+    os.setf(ios::showpoint);
+    os.precision(1);
+    int w1 = 15;
+    int w2 = 20;
+    os.width(w1);
+    os << "f.l. eyepiece";
+    os.width(w2);
+    os << "magnification" << endl;
+    for (int i = 0; i < n; i++) {
+        os.width(w1);
+        os << fe[i];
+        os.width(w2);
+        os << int (focal / fe[i] + 0.5) << endl;
+    }
+    os.setf(initial);
+}
+
+void multiple_streams () {
+    using namespace std;
+
+    ofstream output_file;
+    const char * file_name = "ep-data.txt";
+    output_file.open(file_name);
+    if (!output_file.is_open()) {
+        //  没打开成功
+        cout << "Cannot open " << file_name << "...\n";
+        //  ???
+        exit(EXIT_FAILURE);
+    }
+
+    double objective;
+    cout << "Enter the focal length of your telescope objective in mm: ";
+    cin >> objective;
+    double eps[F_LIMIT];
+    cout << "Enter the focal lengths, in mm, of " << F_LIMIT << " eyepieces:\n";
+    for (int i = 0; i < F_LIMIT; i++) {
+        cout << "Eyepiece #" << i + 1 << " : ";
+        cin >> eps[i];
+    }
+    write_file(output_file, objective, eps, F_LIMIT);
+    write_file(cout, objective, eps, F_LIMIT);
+}
