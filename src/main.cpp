@@ -19,6 +19,7 @@
 #include "chapter7/15_pointer_to_functions.h"
 #include "chapter8/1_inline_functions.h"
 #include "chapter8/2_variable_reference.h"
+#include "chapter8/3_default_params.h"
 
 int main() {
 //    using namespace std;
@@ -61,7 +62,8 @@ int main() {
 //    swap_variables();
 //    structure_reference();
 //    modify_string();
-    multiple_streams();
+//    multiple_streams();
+    get_sub_string();
 
     return 0;
 }
