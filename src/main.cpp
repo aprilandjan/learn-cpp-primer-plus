@@ -20,6 +20,8 @@
 #include "chapter8/1_inline_functions.h"
 #include "chapter8/2_variable_reference.h"
 #include "chapter8/3_default_params.h"
+#include "chapter8/4_function_override.h"
+
 
 int main() {
 //    using namespace std;
@@ -63,7 +65,8 @@ int main() {
 //    structure_reference();
 //    modify_string();
 //    multiple_streams();
-    get_sub_string();
+//    get_sub_string();
+    beginning_of_value();
 
     return 0;
 }

@@ -6,3 +6,5 @@
 #define LEARN_4_FUNCTION_OVERRIDE_H
 
 #endif //LEARN_4_FUNCTION_OVERRIDE_H
+
+void beginning_of_value();
