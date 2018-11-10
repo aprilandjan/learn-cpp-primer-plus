@@ -21,6 +21,7 @@
 #include "chapter8/2_variable_reference.h"
 #include "chapter8/3_default_params.h"
 #include "chapter8/4_function_override.h"
+#include "chapter8/5_function_template.h"
 
 
 int main() {
@@ -46,6 +47,8 @@ int main() {
 //    cin_fish();
 //    outfile();
 //    inputfile();
+
+    //  chapter7
 //    arr_func();
 //    arr_func_2();
 //    arr_func_3();
@@ -59,6 +62,8 @@ int main() {
 //    show_count_down();
 //    draw_ruler();
 //    estimate_time_multiways();
+
+    //  chapter8
 //    inline_square();
 //    try_reference();
 //    swap_variables();
@@ -66,7 +71,8 @@ int main() {
 //    modify_string();
 //    multiple_streams();
 //    get_sub_string();
-    beginning_of_value();
+//    beginning_of_value();
+    template_swap();
 
     return 0;
 }
