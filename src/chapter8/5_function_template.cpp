@@ -13,6 +13,15 @@ void Swap(T & a, T & b);
 template <typename T>
 void Swap(T a[], T b[], int n);
 
+struct job {
+    char name[40];
+    double salary;
+    int floor;
+};
+
+//  explicit specialization 针对特定类型(job)的显式具体化
+template <> void Swap<job>(job & a, job & b);
+
 void outputArray(int arr[], int size) {
     std::cout << "[";
     for(int i = 0; i < size; i++) {
@@ -22,6 +31,10 @@ void outputArray(int arr[], int size) {
         }
     }
     std::cout << "]";
+}
+
+void outputJob(job & j) {
+    std::cout << "Job: name=" << j.name << "; salary=" << j.salary << "; floor=" << j.floor << std::endl;
 }
 
 void template_swap() {
@@ -54,8 +67,29 @@ void template_swap() {
     cout << ", listB = ";
     outputArray(listB, SIZE);
     cout << "...\n";
+
+    job ja = {
+            "Coder",
+            30000,
+            15,
+    };
+
+    job jb = {
+            "Artist",
+            50000,
+            24,
+    };
+
+    cout << "\nBefore swap:\n";
+    outputJob(ja);
+    outputJob(jb);
+    Swap(ja, jb);
+    cout << "After swap:\n";
+    outputJob(ja);
+    outputJob(jb);
 }
 
+//  模板
 template <typename T>
 //  a, b 都是 reference
 void Swap(T & a, T & b) {
@@ -65,6 +99,7 @@ void Swap(T & a, T & b) {
     b = temp;
 }
 
+//  模板重载
 template <typename T>
 void Swap(T a[], T b[], int n) {
     //  定义临时数组
@@ -74,4 +109,14 @@ void Swap(T a[], T b[], int n) {
         a[i] = b[i];
         b[i] = temp[i];
     }
+}
+
+//  显式具体化的实现函数
+template <> void Swap<job>(job & a, job & b) {
+    double temp_salary = a.salary;
+    int temp_floor = a.floor;
+    a.salary = b.salary;
+    a.floor = b.floor;
+    b.salary = temp_salary;
+    b.floor = temp_floor;
 }
