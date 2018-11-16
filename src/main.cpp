@@ -23,7 +23,7 @@
 #include "chapter8/4_function_override.h"
 #include "chapter8/5_function_template.h"
 #include "chapter9/1_using_header_file.h"
-
+#include "chapter9/2_use_external_variable/index.h"
 
 int main() {
 //    using namespace std;
@@ -74,7 +74,8 @@ int main() {
 //    get_sub_string();
 //    beginning_of_value();
 //    template_swap();
-    input_and_show_polar();
+//    input_and_show_polar();
+    use_external();
 
     return 0;
 }
