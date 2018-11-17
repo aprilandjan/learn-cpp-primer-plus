@@ -13,4 +13,5 @@
 ### chapter 9
 
 1. [header file](./src/chapter9/1_using_header_file.cpp)
-2. [external variable](./src/chapter9/2_use_external_variable/index.cpp);
+2. [external variable](./src/chapter9/2_use_external_variable/index.cpp)
+3. [new placement](./src/chapter9/3_new_placement.cpp)
