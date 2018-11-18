@@ -25,6 +25,7 @@
 #include "chapter9/1_using_header_file.h"
 #include "chapter9/2_use_external_variable/index.h"
 #include "chapter9/3_new_placement.h"
+#include "chapter9/4_use_namespace/index.h"
 
 int main() {
 //    using namespace std;
@@ -79,7 +80,8 @@ int main() {
     //  chapter9
 //    input_and_show_polar();
 //    use_external();
-    try_placement_new();
+//    try_placement_new();
+    try_namespace();
 
     return 0;
 }
