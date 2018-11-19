@@ -8,7 +8,11 @@
 
 ### chapter 8
 
-...
+1. [inline functions](./src/chapter8/1_inline_functions.cpp)
+2. [variable reference](./src/chapter8/2_variable_reference.cpp)
+3. [default params](./src/chapter8/3_default_params.cpp)
+4. [function override](./src/chapter8/4_function_override.cpp)
+5. [function template](./src/chapter8/5_function_template.cpp)
 
 ### chapter 9
 
