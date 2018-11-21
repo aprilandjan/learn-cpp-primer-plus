@@ -8,6 +8,7 @@
 #include "stock.h"
 
 void use_stock() {
+    //  通过实例化的对象来调用
     Stock merlin;
     merlin.acquire("Apple", 20, 30);
     merlin.show();
@@ -19,4 +20,7 @@ void use_stock() {
     merlin.show();
     merlin.sell(30000, 0.125);
     merlin.show();
+
+    //  不能直接通过限定名
+//    Stock::show();
 }
