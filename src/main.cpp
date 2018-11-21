@@ -27,6 +27,7 @@
 #include "chapter9/3_new_placement.h"
 #include "chapter9/4_use_namespace/index.h"
 #include "chapter10/1_stock_class/use_stock.h"
+#include "chapter10/2_stock_class_constructed/use_stock.h"
 
 int main() {
 //    using namespace std;
@@ -83,7 +84,10 @@ int main() {
 //    use_external();
 //    try_placement_new();
 //    try_namespace();
-    use_stock();
+
+    //  chapter10
+//    use_stock();
+    use_stock_with_constructor();
 
     return 0;
 }
