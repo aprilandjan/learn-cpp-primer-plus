@@ -30,4 +30,13 @@ void use_stock_with_constructor() {
     //  create with *new*， without a name, but holding it with a pointer
     Stock * p_stock = new Stock("Google", 30, 50);
     p_stock->show();
+
+    Stock w_w("Oracle", 300, 20);
+    w_w.show();
+
+    std::cout << "----> re assign to exist stock:\n";
+    //  创建临时实例，并复制到目标对象中，再将临时实例丢弃
+    w_w = Stock("Facebook");
+    w_w.show();
+//    merlin = Stock("Oracle", 300, 20);
 }

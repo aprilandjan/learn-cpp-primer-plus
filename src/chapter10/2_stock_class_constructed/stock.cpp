@@ -8,11 +8,22 @@
 
 using namespace L10_2;
 
+//Stock::Stock() {
+//    //
+//    std::cout << "Default constructor called...\n";
+//}
+
 //  implement constructor here...
 Stock::Stock(const std::string &co, long n, double pr) {
+    std::cout << "Constructor using " << co << " called.\n";
 //    company = co;
     //  直接在构造函数里调用 acquire 了...
     acquire(co, n, pr);
+}
+
+//  implement destructor here...
+Stock::~Stock() {
+    std::cout << "...bye, " << company << "!\n";
 }
 
 //  持有股票的实现

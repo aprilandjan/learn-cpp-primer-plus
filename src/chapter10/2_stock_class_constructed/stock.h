@@ -13,6 +13,8 @@ namespace L10_2 {
     public:
         //  define constructor here...
         Stock(const std::string & co, long n = 0, double pr = 0.0);
+        //  define destructor here...
+        ~Stock();
     private:
         std::string company;
         long shares;
