@@ -20,3 +20,8 @@
 2. [external variable](./src/chapter9/2_use_external_variable/index.cpp)
 3. [new placement](./src/chapter9/3_new_placement.cpp)
 4. [namespace](./src/chapter9/4_use_namespace/index.cpp)
+
+### chapter 10
+
+1. [class](./src/chapter10/1_stock_class/use_stock.cpp)
+2. [constructor and destructor](./src/chapter10/2_stock_class_constructed/use_stock.cpp)
