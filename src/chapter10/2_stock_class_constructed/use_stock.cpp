@@ -42,4 +42,8 @@ void use_stock_with_constructor() {
 
     const Stock qs("Ali");
     qs.show();
+
+    //  比较并获取引用，不生成新的
+    const Stock higher = merlin.compare(aaj);
+    higher.show();
 }

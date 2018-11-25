@@ -33,6 +33,8 @@ namespace L10_2 {
         void update(double price);
         //  const 成员函数，保证不修改调用对象
         void show() const;
+        //  三个 const 意义各不相同... complicated
+        const Stock & compare(const Stock & target) const;
     };
 }
 

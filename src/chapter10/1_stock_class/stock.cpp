@@ -6,6 +6,8 @@
 
 #include "stock.h"
 
+using namespace L10_1;
+
 //  持有股票的实现
 void Stock::acquire(const std::string &co, long n, double pr) {
     company = co;

@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "./stock.h"
+#include "../1_stock_class/stock.h"
 
 using namespace L10_2;
 
@@ -14,7 +15,7 @@ using namespace L10_2;
 //}
 
 //  implement constructor here...
-Stock::Stock(const std::string &co, long n, double pr) {
+L10_2::Stock::Stock(const std::string &co, long n, double pr) {
     std::cout << "Constructor using " << co << " called.\n";
 //    company = co;
     //  直接在构造函数里调用 acquire 了...
@@ -22,12 +23,12 @@ Stock::Stock(const std::string &co, long n, double pr) {
 }
 
 //  implement destructor here...
-Stock::~Stock() {
+L10_2::Stock::~Stock() {
     std::cout << "...bye, " << company << "!\n";
 }
 
 //  持有股票的实现
-void Stock::acquire(const std::string &co, long n, double pr) {
+void L10_2::Stock::acquire(const std::string &co, long n, double pr) {
     company = co;
     if (n < 0) {
         std::cout << "Number of shares can't be negative; " << company << " shares set to 0.\n";
@@ -41,7 +42,7 @@ void Stock::acquire(const std::string &co, long n, double pr) {
 }
 
 //  买入股票
-void Stock::buy(long num, double price) {
+void L10_2::Stock::buy(long num, double price) {
     if (num < 0) {
         std::cout << "Number of shares purchased can't be negative. Transaction is aborted.\n";
     } else {
@@ -51,7 +52,7 @@ void Stock::buy(long num, double price) {
     }
 }
 
-void Stock::sell(long num, double price) {
+void L10_2::Stock::sell(long num, double price) {
     using namespace std;
     if (num < 0) {
         cout << "Number of shares sold can't be negative. Transaction is aborted.\n";
@@ -64,7 +65,7 @@ void Stock::sell(long num, double price) {
     }
 }
 
-void Stock::update(double price) {
+void L10_2::Stock::update(double price) {
     share_val = price;
     set_tot();
 }
@@ -86,4 +87,12 @@ void Stock::show() const {
 
 inline void Stock::set_tot_1() {
     std::cout << "Just another inline implementation...\n";
+}
+
+const L10_2::Stock & L10_2::Stock::compare(const Stock & target) const {
+    if (target.total_val > this->total_val) {
+        return target;
+    } else {
+        return *this;
+    }
 }

@@ -8,6 +8,7 @@
 #include "stock.h"
 
 void use_stock() {
+    using namespace L10_1;
     //  通过实例化的对象来调用
     Stock merlin;
     merlin.acquire("Apple", 20, 30);
