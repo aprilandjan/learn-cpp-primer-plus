@@ -87,7 +87,8 @@ int main() {
 
     //  chapter10
 //    use_stock();
-    use_stock_with_constructor();
+//    use_stock_with_constructor();
+    class_instance_in_array();
 
     return 0;
 }

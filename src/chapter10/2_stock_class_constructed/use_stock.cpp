@@ -47,3 +47,34 @@ void use_stock_with_constructor() {
     const Stock higher = merlin.compare(aaj);
     higher.show();
 }
+
+/**
+ * 类实例组成数组
+ */
+void class_instance_in_array() {
+    using namespace L10_2;
+    const int SIZE = 4;
+    //  数组初始化
+    Stock stocks[SIZE] = {
+            Stock("Apple", 20, 30),
+            Stock("Microsoft", 30, 50),
+            Stock("Google", 10, 50),
+            Stock("Facebook", 30, 30)
+    };
+    std::cout << "Stocks current holding:\n";
+    int n;
+    for (n = 0; n < SIZE; n++) {
+        stocks[n].show();
+    }
+
+    //  top 地址指向数组里第一个元素
+    const Stock * top = &stocks[0];
+    for(n = 1; n < SIZE; n++) {
+        // top 本来就是一个地址，地址访问其实例方法使用 ->
+//        top->show();
+        //  compare 返回了一个 stock 引用，对其再取地址
+        top = &top->compare(stocks[n]);
+    }
+    std::cout << "Top valuabe holding:\n",
+    top->show();
+}
