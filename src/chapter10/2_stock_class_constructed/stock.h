@@ -31,7 +31,8 @@ namespace L10_2 {
         void buy(long num, double price);
         void sell(long num, double price);
         void update(double price);
-        void show();
+        //  const 成员函数，保证不修改调用对象
+        void show() const;
     };
 }
 

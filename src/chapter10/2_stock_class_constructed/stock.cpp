@@ -69,7 +69,8 @@ void Stock::update(double price) {
     set_tot();
 }
 
-void Stock::show() {
+//  只要类方法不修改调用对象，就应该将其声明为 const
+void Stock::show() const {
     //  设置输出格式
     //  使用定点表示法，避免科学记数法
     std::ios_base::fmtflags origin_flag = std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);

@@ -39,4 +39,7 @@ void use_stock_with_constructor() {
     w_w = Stock("Facebook");
     w_w.show();
 //    merlin = Stock("Oracle", 300, 20);
+
+    const Stock qs("Ali");
+    qs.show();
 }
