@@ -28,6 +28,7 @@
 #include "chapter9/4_use_namespace/index.h"
 #include "chapter10/1_stock_class/use_stock.h"
 #include "chapter10/2_stock_class_constructed/use_stock.h"
+#include "chapter10/3_stack/use_stack.h"
 
 int main() {
 //    using namespace std;
@@ -88,7 +89,8 @@ int main() {
     //  chapter10
 //    use_stock();
 //    use_stock_with_constructor();
-    class_instance_in_array();
+//    class_instance_in_array();
+    use_stack();
 
     return 0;
 }
