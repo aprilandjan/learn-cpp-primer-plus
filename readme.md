@@ -25,3 +25,4 @@
 
 1. [class](./src/chapter10/1_stock_class/use_stock.cpp)
 2. [constructor and destructor](./src/chapter10/2_stock_class_constructed/use_stock.cpp)
+3. [stack](./src/chapter10/3_stack/stack.cpp)
