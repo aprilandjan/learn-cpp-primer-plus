@@ -39,10 +39,12 @@ void Time::reset(int h, int m) {
 
 //  返回新的实例，不修改当前实例
 Time Time::sum(const Time &t) const {
+    //  局部变量存储 sum
     Time total;
     total.reset(hour, minute);
     total.addHour(t.hour);
     total.addMin(t.minute);
+    //  实际上返回了该局部变量的拷贝供函数外使用，原本局部变量被删除
     return total;
 }
 
