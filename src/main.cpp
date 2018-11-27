@@ -29,6 +29,7 @@
 #include "chapter10/1_stock_class/use_stock.h"
 #include "chapter10/2_stock_class_constructed/use_stock.h"
 #include "chapter10/3_stack/use_stack.h"
+#include "chapter11/1_operator_overloading/use_operator_overloading.h"
 
 int main() {
 //    using namespace std;
@@ -90,7 +91,10 @@ int main() {
 //    use_stock();
 //    use_stock_with_constructor();
 //    class_instance_in_array();
-    use_stack();
+//    use_stack();
+
+    //  chapter11
+    use_operator_overloading();
 
     return 0;
 }
