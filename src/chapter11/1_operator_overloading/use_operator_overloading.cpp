@@ -28,4 +28,10 @@ void use_operator_overloading() {
     std::cout << "Sum of monday and tuesday:\n";
     const Time sumTime = monday.sum(* tuesday);
     sumTime.show();
+
+    std::cout << "Try again use operator overloading:\n";
+    const Time t1 = monday.operator+(*tuesday);
+    t1.show();
+    const Time t2 = monday + *tuesday;
+    t2.show();
 }

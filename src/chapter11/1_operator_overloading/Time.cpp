@@ -52,3 +52,8 @@ Time Time::sum(const Time &t) const {
 void Time::show() const {
     std::cout<< "Time [hour=" << hour << ", minute=" << minute << "]\n";
 }
+
+//  运算符重载的实现，直接使用原 sum 方法
+Time Time::operator+(const Time &t) const {
+    return sum(t);
+}

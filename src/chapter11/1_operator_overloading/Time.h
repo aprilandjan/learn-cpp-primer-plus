@@ -20,6 +20,8 @@ namespace L11_1 {
         //  声明以下类方法不会修改该实例
         Time sum(const Time & t) const;
         void show() const;
+        //  运算符重载的原型
+        Time operator+(const Time & t) const;
     };
 }
 
