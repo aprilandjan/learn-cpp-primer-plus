@@ -19,9 +19,13 @@ namespace L11_1 {
         void reset(int h = 0, int m = 0);
         //  声明以下类方法不会修改该实例
         Time sum(const Time & t) const;
+        Time diff(const Time & t) const;
+        Time multiple(double n) const;
         void show() const;
         //  运算符重载的原型
         Time operator+(const Time & t) const;
+        Time operator-(const Time & t) const;
+        Time operator*(double n) const;
     };
 }
 

@@ -48,6 +48,17 @@ Time Time::sum(const Time &t) const {
     return total;
 }
 
+Time Time::diff(const Time &t) const {
+    long m = hour * 60 + minute;
+    long m2 = t.hour * 60 + t.minute;
+    return Time(0, m - m2);
+}
+
+Time Time::multiple(double n) const {
+    //  自动类型转换？...
+    return Time(long(n * hour), long(n * minute));
+}
+
 //  仅打印，不修改实例
 void Time::show() const {
     std::cout<< "Time [hour=" << hour << ", minute=" << minute << "]\n";
@@ -56,4 +67,12 @@ void Time::show() const {
 //  运算符重载的实现，直接使用原 sum 方法
 Time Time::operator+(const Time &t) const {
     return sum(t);
+}
+
+Time Time::operator-(const Time &t) const {
+    return diff(t);
+}
+
+Time Time::operator*(double n) const {
+    return multiple(n);
 }

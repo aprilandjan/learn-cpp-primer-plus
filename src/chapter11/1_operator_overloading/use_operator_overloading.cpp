@@ -34,4 +34,14 @@ void use_operator_overloading() {
     t1.show();
     const Time t2 = monday + *tuesday;
     t2.show();
+
+    std::cout << "\nTry diff between monday and tuesday:\n";
+    Time d1 = monday - *tuesday;
+    d1.show();
+    std::cout << "Try diff between tuesday and monday:\n";
+    Time d2 = *tuesday - monday;
+    d2.show();
+
+    std::cout << "\n Try multiple x:\n";
+    (monday * 3.5).show();
 }
