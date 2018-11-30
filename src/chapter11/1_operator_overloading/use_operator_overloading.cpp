@@ -44,4 +44,7 @@ void use_operator_overloading() {
 
     std::cout << "\n Try multiple x:\n";
     (monday * 3.5).show();
+    Time a = 3.5 * L11_1::Time(1, 1);
+    a.show();
+    (3.5 * monday).show();
 }

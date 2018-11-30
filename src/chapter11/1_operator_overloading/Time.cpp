@@ -76,3 +76,13 @@ Time Time::operator-(const Time &t) const {
 Time Time::operator*(double n) const {
     return multiple(n);
 }
+
+//  如果不套在 namespace 里会报错...complicated, 可能是编译器会认为尝试重载了全局的 * 运算符...
+//  https://stackoverflow.com/questions/10712380/undefined-reference-to-operator
+namespace L11_1 {
+    //  友元的定义
+    Time operator*(double m, const Time & t) {
+        return t.multiple(m);
+    }
+
+}

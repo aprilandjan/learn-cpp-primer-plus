@@ -26,6 +26,8 @@ namespace L11_1 {
         Time operator+(const Time & t) const;
         Time operator-(const Time & t) const;
         Time operator*(double n) const;
+        //  声明友元: 非成员函数，但是能访问类的私有成员
+        friend Time operator*(double m, const Time & t);
     };
 }
 
