@@ -52,4 +52,18 @@ namespace L11_2 {
     void Vector::set_radian(double rad) {
         reset(_radius, rad, MODE::POL);
     }
+    //  operator overloading
+    Vector Vector::operator+(const Vector & v) const {
+        //  实际上返回了该局部变量的拷贝供函数外使用，原本局部变量被删除
+        //  如果返回局部变量的引用，则可能导致程序崩溃
+        return Vector(_x + v._x, _y + v._y);
+    }
+    //  friend, not member function of class Vector
+    Vector operator*(double n, const Vector & v) {
+        return Vector(n * v._x, n * v._y);
+    }
+
+    std::ostream & operator<<(std::ostream & os, const Vector & v) {
+        os << "Vector[x=" << v._x << ", y=" << v._y << "]";
+    }
 }

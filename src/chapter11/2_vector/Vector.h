@@ -32,6 +32,11 @@ namespace L11_2 {
         double get_y() const { return _y; };
         double get_radius() const { return _radius; };
         double get_radian() const { return _radian; };
+        //  operator overloading
+        Vector operator+(const Vector &) const;
+        //  friend
+        friend Vector operator*(double n, const Vector & v);
+        friend std::ostream & operator<<(std::ostream & os, const Vector & v);
     };
 }
 
