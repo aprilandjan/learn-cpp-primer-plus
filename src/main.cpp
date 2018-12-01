@@ -30,6 +30,7 @@
 #include "chapter10/2_stock_class_constructed/use_stock.h"
 #include "chapter10/3_stack/use_stack.h"
 #include "chapter11/1_operator_overloading/use_operator_overloading.h"
+#include "chapter11/2_vector/use_vector.h"
 
 int main() {
 //    using namespace std;
@@ -94,7 +95,8 @@ int main() {
 //    use_stack();
 
     //  chapter11
-    use_operator_overloading();
+//    use_operator_overloading();
+    use_vector();
 
     return 0;
 }
