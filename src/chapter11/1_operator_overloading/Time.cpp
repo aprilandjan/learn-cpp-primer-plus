@@ -84,5 +84,8 @@ namespace L11_1 {
     Time operator*(double m, const Time & t) {
         return t.multiple(m);
     }
-
+    std::ostream & operator<<(std::ostream & os, const Time & t) {
+        os << "Time [hour=" << t.hour << ", minute=" << t.minute << "]";
+        return os;
+    }
 }

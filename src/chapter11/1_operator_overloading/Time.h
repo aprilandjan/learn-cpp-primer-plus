@@ -5,6 +5,8 @@
 #ifndef LEARN_TIME_H
 #define LEARN_TIME_H
 
+#include <iostream>
+
 namespace L11_1 {
     class Time {
     private:
@@ -28,6 +30,8 @@ namespace L11_1 {
         Time operator*(double n) const;
         //  声明友元: 非成员函数，但是能访问类的私有成员
         friend Time operator*(double m, const Time & t);
+        //  重载管道运算符<<
+        friend std::ostream & operator<<(std::ostream & os, const Time & t);
     };
 }
 
