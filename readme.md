@@ -30,3 +30,4 @@
 ### chapter11
 
 1. [operator overloading](./src/chapter11/1_operator_overloading/use_operator_overloading.cpp)
+2. [friend functions](./src/chapter11/2_vector/use_vector.cpp)
