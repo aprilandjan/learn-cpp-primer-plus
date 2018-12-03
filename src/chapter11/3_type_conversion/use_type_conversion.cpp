@@ -30,4 +30,10 @@ void use_type_conversion() {
 
     //  15 => double 15 => Weight(double)
     display(15);
+
+    //  尝试使用转换函数
+    int b_int = b;
+    cout << "transform b to int: " << b_int << "\n";
+    double b_double = b;
+    cout << "transform b to double: " << b_double << "\n";
 }

@@ -21,6 +21,9 @@ namespace L11_3 {
         Weight();
         ~Weight();
         void show() const;
+        //  声明一些类转换函数，以实现 double xx = Weight(xx);
+        operator int() const;
+        operator double() const;
     };
 };
 

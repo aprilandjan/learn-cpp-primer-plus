@@ -36,4 +36,13 @@ namespace L11_3 {
     void Weight::show() const {
         std::cout << stone << " stones, " << pds_left << " pounds\n";
     }
+    //  转换函数的实现. 不能加返回类型的定义
+    Weight::operator int() const {
+        std::cout << "transform int: " << stone << " ";
+        return stone;
+    }
+    Weight::operator double() const {
+        std::cout << "transform double: " << pounds << " ";
+        return pounds;
+    }
 }
