@@ -32,6 +32,7 @@
 #include "chapter11/1_operator_overloading/use_operator_overloading.h"
 #include "chapter11/2_vector/use_vector.h"
 #include "chapter11/3_type_conversion/use_type_conversion.h"
+#include "chapter12/1_class_dynamic_memory/use_string.h"
 
 int main() {
 //    using namespace std;
@@ -98,7 +99,10 @@ int main() {
     //  chapter11
 //    use_operator_overloading();
 //    use_vector();
-    use_type_conversion();
+//    use_type_conversion()
+
+    //  chapter12
+    use_string_bad();
 
     return 0;
 }
