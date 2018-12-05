@@ -13,7 +13,7 @@ namespace L12_1 {
     int StringBad::num_strings = 0;
     StringBad::StringBad() {
         len = 4;
-        //  动态内存分配
+        //  动态内存分配, 把字符串保存在 “heap” 中
         str = new char[4];
         std::strcpy(str, "C++");
         num_strings++;
