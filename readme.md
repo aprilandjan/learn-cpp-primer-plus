@@ -31,3 +31,7 @@
 
 1. [operator overloading](./src/chapter11/1_operator_overloading/use_operator_overloading.cpp)
 2. [friend functions](./src/chapter11/2_vector/use_vector.cpp)
+
+### chapter12
+
+1. [class dynamic memory](./src/chapter12/1_class_dynamic_memory/use_string.cpp)
