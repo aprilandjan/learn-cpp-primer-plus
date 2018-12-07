@@ -102,7 +102,8 @@ int main() {
 //    use_type_conversion()
 
     //  chapter12
-    use_string_bad();
+//    use_string_bad();
+    use_string();
 
     return 0;
 }

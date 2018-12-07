@@ -6,5 +6,6 @@
 #define LEARN_USE_STRING_H
 
 void use_string_bad();
+void use_string();
 
 #endif //LEARN_USE_STRING_H

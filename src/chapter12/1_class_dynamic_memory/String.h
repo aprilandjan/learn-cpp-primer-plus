@@ -27,6 +27,7 @@ namespace L12_1 {
         //  allow compare
         friend bool operator>(const String &s1, const String &s2);
         friend bool operator<(const String &s1, const String &s2);
+        friend bool operator==(const String &s1, const String &s2);
         //  allow [x]
         char & operator[](int i);
         const char & operator[](int i) const;

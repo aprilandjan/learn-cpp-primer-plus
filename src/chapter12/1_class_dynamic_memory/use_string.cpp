@@ -5,6 +5,7 @@
 #include <iostream>
 #include "use_string.h"
 #include "./StringBad.h"
+#include "./String.h"
 
 void pass_string_by_reference(L12_1::StringBad & s) {
     std::cout << "String passed by reference:\n" << s << "\n";
@@ -41,4 +42,23 @@ void use_string_bad() {
     StringBad f(e);
     cout << "e: " << e << "\n";
     cout << "f: " << f << "\n";
+}
+
+void use_string() {
+    using namespace std;
+    using namespace L12_1;
+
+    String a("ABCDEFG");
+    cout << a << ", length=" << a.length() << endl;
+
+    String b("HIJKLMN");
+    cout << b << ", a < b ? " << (a < b) << "; b < a ? " << (b < a) << endl;
+
+    String c;
+    cout << c << ", length=" << c.length() << endl;
+
+    String d("ASDF");
+    cout << d[0] << d[1] << d[2] << d[3] << d[4] << endl;
+    d[1] = 'Q';
+    cout << d[1] << "," << d << endl;
 }
