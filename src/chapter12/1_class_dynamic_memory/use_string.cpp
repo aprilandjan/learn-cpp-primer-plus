@@ -61,4 +61,26 @@ void use_string() {
     cout << d[0] << d[1] << d[2] << d[3] << d[4] << endl;
     d[1] = 'Q';
     cout << d[1] << "," << d << endl;
+
+    String e = "Direct string assignment";
+    cout << e << "; length=" << e.length() << endl;
+
+    String f(e);
+    cout << f << endl;
+
+    const int TEMP_SIZE = 81;
+    char temp[TEMP_SIZE];
+
+    cout << "Please input your line of string:\n";
+    cin.get(temp, TEMP_SIZE);
+//    while(cin && cin.get() != '\n') {
+//
+//    }
+    String g;
+    //  在下面的赋值语句中 temp 被隐式转换为了一个 String 对象
+    //  如果不重载赋值方法（=），则会进行隐式的对象值 copy
+    g = temp;
+    cout << "g: " << g << endl;
+
+    cout << "-----> " << String::getInstanceCount() << " instance now <-----\n";
 }
