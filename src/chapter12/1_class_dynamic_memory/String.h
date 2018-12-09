@@ -32,7 +32,7 @@ namespace L12_1 {
         //  friend function, allow `cout << str`
         friend std::ostream & operator<<(std::ostream & os, const String & str);
         //  allow `cin >> str`
-        friend std::istream & operator>>(std::istream is, String &str);
+        friend std::istream & operator>>(std::istream & is, String & str);
         //  allow compare
         friend bool operator>(const String &s1, const String &s2);
         friend bool operator<(const String &s1, const String &s2);

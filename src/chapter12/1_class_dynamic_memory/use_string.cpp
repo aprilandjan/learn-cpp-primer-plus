@@ -84,3 +84,50 @@ void use_string() {
 
     cout << "-----> " << String::getInstanceCount() << " instance now <-----\n";
 }
+
+void use_string_as_pointer() {
+    using namespace std;
+    using namespace L12_1;
+
+    const int NUM_LINES = 10;
+    const int MAX_LINE_SIZE = 81;
+
+    String name;
+    cout << "Hi, what is your name?\n";
+    //  need to implement overload operator>>
+    cin >> name;
+
+    cout << name << ", please enter some lines <empty line to quit>:\n";
+    String lines[NUM_LINES];
+    char temp[MAX_LINE_SIZE];
+    int i = 0;
+    for (i; i < NUM_LINES; i++) {
+        cout << i + 1 << " : ";
+        cin.get(temp, MAX_LINE_SIZE);
+        //  跳过其他的字符
+        while(cin && cin.get() == '\0') {
+            continue;
+        }
+        if (!cin || temp[0] == '\0') {
+            break;  //  空行，中止
+        } else {
+            lines[i] = temp;
+        }
+    }
+
+    int total = i;
+    if (total > 0) {
+        cout << "Here are your lines:\n";
+        for (i = 0; i < total; i++) {
+            cout << i + 1 << " : " << lines[i] << endl;
+        }
+
+        String *p_shortest = &lines[0];
+        for (i = 0; i < total; i++) {
+            if (lines[i].length() < p_shortest->length()) {
+                p_shortest = &lines[i];
+            }
+        }
+        cout << "The shortest line is:\n" << *p_shortest << endl;
+    }
+}

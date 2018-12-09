@@ -103,7 +103,8 @@ int main() {
 
     //  chapter12
 //    use_string_bad();
-    use_string();
+//    use_string();
+    use_string_as_pointer();
 
     return 0;
 }

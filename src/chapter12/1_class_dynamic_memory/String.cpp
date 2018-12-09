@@ -85,6 +85,20 @@ namespace L12_1 {
         os << str._p_str;
         return os;
     }
+    std::istream& operator>>(std::istream &is, String &str) {
+        char temp[String::CIN_LIMIT];
+        //  取一定长度的字符，存到 temp 里
+        is.get(temp, String::CIN_LIMIT);
+        if (is) {
+            //  赋值给 string 对象
+            str = temp;
+        }
+        //  有内容且下一个内容不是换行符 => 一直读到没内容/下一个内容是换行符时，return
+        while(is && is.get() != '\n') {
+            continue;
+        }
+        return is;
+    }
     /**
      * 允许取`常量` str[i] 取值. 返回一个字符的引用(char &)
      * @param i

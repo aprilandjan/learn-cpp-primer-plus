@@ -7,5 +7,6 @@
 
 void use_string_bad();
 void use_string();
+void use_string_as_pointer();
 
 #endif //LEARN_USE_STRING_H
