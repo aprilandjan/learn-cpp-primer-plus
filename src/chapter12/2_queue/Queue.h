@@ -26,8 +26,7 @@ namespace L12_2 {
         int _size;
         //  最大允许的节点数
         const int _max_size;
-    public:
-        Queue(int max_size = DEFAULT_SIZE);
+        //  put them in "private" field to prevent implicit calling.
         Queue(const Queue & q): _max_size(0) {
             //  just to prevent Queue q(anotherQ)
         };
@@ -35,6 +34,8 @@ namespace L12_2 {
             //  just to prevent re-assign queue: q = anotherQ
             return *this;
         };
+    public:
+        Queue(int max_size = DEFAULT_SIZE);
         ~Queue();
         bool is_empty() const;
         bool is_full() const;
