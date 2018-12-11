@@ -2,9 +2,14 @@
 // Created by May on 2018/12/10.
 //
 
+//  provide std::rand()
+#include <cstdlib>
 #include "Queue.h"
 
 namespace L12_2 {
+    //============================
+    //          Queue
+    //============================
     //  为了能初始化私有常量(const), 必须使用 "成员初始化列表" member initializer list
     Queue::Queue(int size): _max_size(size), _first(nullptr), _last(nullptr), _size(0) {
         //  do nothing because "member initializer list"
@@ -32,6 +37,20 @@ namespace L12_2 {
      */
     bool Queue::is_full() const {
         return _size == _max_size;
+    }
+    /**
+     * 获取当前队列长度
+     * @return
+     */
+    int Queue::get_size() const {
+        return _size;
+    }
+    /**
+     * 取队列里的第一个存储的东西
+     * @return
+     */
+    const Item& Queue::first() const {
+        return _first->item;
     }
     /**
      * 推入队列, push
@@ -74,5 +93,14 @@ namespace L12_2 {
         delete temp;
         _size--;
         return true;
+    }
+
+    //========================
+    //      Customer
+    //========================
+    void Customer::init(long arrive_time) {
+        //  std::rand() => 0 ~ RAND_MAX
+        _process_time = std::rand() % 3 + 1;
+        _arrive_time = arrive_time;
     }
 }

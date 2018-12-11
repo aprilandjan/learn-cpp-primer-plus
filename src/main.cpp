@@ -33,6 +33,7 @@
 #include "chapter11/2_vector/use_vector.h"
 #include "chapter11/3_type_conversion/use_type_conversion.h"
 #include "chapter12/1_class_dynamic_memory/use_string.h"
+#include "chapter12/2_queue/use_queue.h"
 
 int main() {
 //    using namespace std;
@@ -104,7 +105,8 @@ int main() {
     //  chapter12
 //    use_string_bad();
 //    use_string();
-    use_string_as_pointer();
+//    use_string_as_pointer();
+    use_queue();
 
     return 0;
 }

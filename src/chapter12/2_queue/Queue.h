@@ -5,9 +5,27 @@
 #ifndef LEARN_QUEUE_H
 #define LEARN_QUEUE_H
 
-#include "./Item.h"
-
 namespace L12_2 {
+    class Customer {
+    private:
+        long _arrive_time;
+        int _process_time;
+    public:
+        Customer() {
+            _arrive_time = _process_time = 0;
+        };
+        void init(long arrive_time);
+        long get_arriveTime() const {
+            return _arrive_time;
+        }
+        long get_process_time() const {
+            return _process_time;
+        }
+    };
+
+    //  定义一个类型 Item, 实际上就是 Customer
+    typedef Customer Item;
+
     class Queue {
         //  单向*链表*的节点
         struct Node {
@@ -39,6 +57,8 @@ namespace L12_2 {
         ~Queue();
         bool is_empty() const;
         bool is_full() const;
+        const Item & first() const;
+        int get_size() const;
         bool enqueue(const Item &item);
         bool dequeue(const Item &item);
     };
