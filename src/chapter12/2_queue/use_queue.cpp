@@ -58,7 +58,7 @@ void use_queue() {
     int num_queued = 0;
     for (t = 0; t < minutes; t++) {
         //  随机生成是否有新客户
-        cout << "====> minute=" << t << ", remaining_wait_time=" << remain_wait_time << " <====\n";
+        cout << "====> minute=" << t << " <====\n";
         if (check_new_customer(average_customer_time_spent)) {
             cout << "new customer incoming!\n";
             if (queue.is_full()) {
@@ -72,22 +72,24 @@ void use_queue() {
                 cout << "Added to the queue(size=" << queue.get_size() << ")\n";
             }
         }
+        if (queue.is_empty()) {
+            cout << "no customer, rest...\n";
+            continue;
+        }
         //  应该开始处理队列里的第一个人
-        if (remain_wait_time == 0 && !queue.is_empty()) {
-            // Todo: 取队列里的第一个人的处理时间
+        if (remain_wait_time == 0) {
             remain_wait_time = queue.first().get_process_time();
             cout << "now begin to handle customer. current queue(size=" << queue.get_size() << "). it takes " << remain_wait_time << " minutes. \n";
         }
+        //  time pass...
+        remain_wait_time--;
+        cout << "Time pass..." << remain_wait_time << "\n";
         //  如果队列非空，且队列中当前等待的人剩余等待时间已满，那么该 shift 了...
-        if (remain_wait_time <= 0 && !queue.is_empty()) {
+        if (remain_wait_time <= 0) {
             queue.dequeue(temp);
             //  设置为下一个顾客的等待时间
 //            remain_wait_time = temp.get_process_time();
             cout << "ok, successfully handled one customer. current queue(size=" << queue.get_size() << ")\n";
-        }
-        if (remain_wait_time > 0) {
-            remain_wait_time --;
-            cout << "time pass... remaining: " << remain_wait_time << "\n";
         }
     }
 }

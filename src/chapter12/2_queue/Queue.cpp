@@ -100,7 +100,7 @@ namespace L12_2 {
     //========================
     void Customer::init(long arrive_time) {
         //  std::rand() => 0 ~ RAND_MAX
-        _process_time = std::rand() % 3 + 1;
+        _process_time = std::rand() % 3 + 3;
         _arrive_time = arrive_time;
     }
 }
