@@ -35,3 +35,4 @@
 ### chapter12
 
 1. [class dynamic memory](./src/chapter12/1_class_dynamic_memory/use_string.cpp)
+2. [class Queue](./src/chapter12/2_queue/use_queue.cpp)
