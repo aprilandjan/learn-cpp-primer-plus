@@ -15,4 +15,8 @@ namespace L13_1 {
     DotaPlayer::DotaPlayer(unsigned int game_played, const Player &player): Player(player) {
         _game_played = game_played;
     }
+    void DotaPlayer::name() const {
+        //  since "_name" is defined as private, child class can not acess it...
+        std::cout << "DotaPlayer[" << _name << "]";
+    }
 }

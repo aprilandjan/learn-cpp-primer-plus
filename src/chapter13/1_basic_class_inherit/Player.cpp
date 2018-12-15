@@ -11,7 +11,7 @@ namespace L13_1 {
         _is_playing = is_playing;
     }
     void Player::name() const {
-        std::cout << _name;
+        std::cout << "Player[" << _name << "]";
     }
     bool Player::is_playing() const {
         return _is_playing;
