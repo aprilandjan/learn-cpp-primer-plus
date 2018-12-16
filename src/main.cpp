@@ -35,6 +35,7 @@
 #include "chapter12/1_class_dynamic_memory/use_string.h"
 #include "chapter12/2_queue/use_queue.h"
 #include "chapter13/1_basic_class_inherit/use_class_player.h"
+#include "chapter13/2_virtual_function/use_class_bank_account.h"
 
 int main() {
 //    using namespace std;
@@ -111,7 +112,8 @@ int main() {
 
     //  chapter13
 //    use_class_player();
-    use_class_dota_player();
+//    use_class_dota_player();
+    use_class_bank_account();
 
     return 0;
 }
