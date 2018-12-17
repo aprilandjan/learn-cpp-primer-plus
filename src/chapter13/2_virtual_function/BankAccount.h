@@ -18,6 +18,9 @@ namespace L13_2 {
          * 卡号
          */
         long _number;
+    protected:
+        //  declare as protected, so derived class can access it directly
+        //  same as typescript
         /** 余额 */
         double _balance;
     public:

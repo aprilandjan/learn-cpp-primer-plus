@@ -95,7 +95,9 @@ namespace L13_2 {
         precis initPrec = cout.precision(2);
 
         //  当前余额
-        double balance = get_balance();
+//        double balance = get_balance();
+        //  access through protected member
+        double balance = _balance;
         if (amount < balance) {
             BankAccount::withdraw(amount);
         } else if (amount < balance + _max_loan - _loan) {
