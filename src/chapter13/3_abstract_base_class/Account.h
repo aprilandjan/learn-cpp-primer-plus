@@ -43,7 +43,8 @@ namespace L13_3 {
     };
 
     //  derived class of an abstract-base-class
-    class BankAccount: Account {
+    // https://stackoverflow.com/questions/4847100/c-inheritance-inaccessible-base
+    class BankAccount: public Account {
     public:
         BankAccount(const std::string & name = "none", long number = -1, double balance = 0): Account(name, number, balance){};
         //  must be re-declare virtual functions
@@ -52,7 +53,7 @@ namespace L13_3 {
         virtual ~BankAccount(){};
     };
 
-    class BankAccountPlus: Account {
+    class BankAccountPlus: public Account {
     private:
         /** 最大信用额度 */
         double _max_loan;
@@ -61,8 +62,8 @@ namespace L13_3 {
         /** 使用的信用额 */
         double _loan;
     public:
-        BankAccountPlus(const std::string & name = "none", long number = -1, double balance = 0, double max_loan = 500, double _rate = 0.015);
-        BankAccountPlus(const BankAccount & ba, double max_loan = 500, double _rate = 0.015);
+        BankAccountPlus(const std::string & name = "none", long number = -1, double balance = 0, double max_loan = 500, double rate = 0.015);
+        BankAccountPlus(const BankAccount & ba, double max_loan = 500, double rate = 0.015);
         virtual void withdraw(double amount);
         virtual void view() const;
         virtual ~BankAccountPlus(){};
