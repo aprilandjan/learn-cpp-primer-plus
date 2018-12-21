@@ -52,6 +52,34 @@ namespace L13_4 {
 
     // Banana implementation
     Banana::Banana(const char *name, const char *style):Fruit(name) {
-
+        _style = new char[std::strlen(style) + 1];
+        std::strcpy(_style, style);
+    }
+    Banana::Banana(const Fruit &f, const char *style):Fruit(f) {
+        _style = new char[std::strlen(style) + 1];
+        std::strcpy(_style, style);
+    }
+    Banana::Banana(const Banana &b):Fruit(b) {
+        _style = new char[std::strlen(b._style) + 1];
+        std::strcpy(_style, b._style);
+    }
+    Banana::~Banana() {
+        delete [] _style;
+    }
+    Banana& Banana::operator=(const Banana &b) {
+        if (this == &b) {
+            return *this;
+        }
+        //  这里需要调用一下基类的 重载赋值运算符
+        Fruit::operator=(b);
+        delete [] _style;
+        _style = new char[std::strlen(b._style) + 1];
+        std::strcpy(_style, b._style);
+        return *this;
+    }
+    std::ostream& operator<<(std::ostream &os, const Banana &b) {
+        os << (const Fruit &) b;
+        os << "Style: " << b._style << std::endl;
+        return os;
     }
 }
