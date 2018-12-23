@@ -1,0 +1,48 @@
+//
+// Created by May on 2018/12/23.
+//
+
+#include <iostream>
+
+#include "use_student.h"
+#include "Student.h"
+
+void set_student(L14_1::Student & stu, int n) {
+    std::cout << "Please enter the student name:\n";
+
+    //  调用 student 类中定义的友元函数
+    getline(std::cin, stu);
+
+    std::cout << "Please enter " << n << " quiz scores:\n";
+    for (int i = 0; i < n; i++) {
+        //  先通过 operator[i] 拿到 double 值，再调用 double 的 friend operator>> 赋值
+        std::cin >> stu[i];
+    }
+    while (std::cin.get() != '\n') {
+        continue;
+    }
+}
+
+
+void use_student() {
+    using namespace L14_1;
+
+    const int num_student = 2;
+    const int num_quiz = 3;
+
+    Student list[num_student] = {
+            Student(num_quiz),
+            Student(num_quiz),
+    };
+    int i = 0;
+    for (i = 0; i < num_student; i++) {
+        set_student(list[i], num_quiz);
+    }
+
+    std::cout << "\nResult:\n";
+    for (i = 0; i < num_student; i++) {
+        std::cout << std::endl << list[i];
+        std::cout << "average: " << list[i].get_average() << std::endl;
+    }
+    std::cout << "Done!\n";
+}

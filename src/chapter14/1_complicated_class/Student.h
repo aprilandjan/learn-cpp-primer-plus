@@ -40,7 +40,7 @@ namespace L14_1 {
         //  friend
         //  >> stu
         friend std::istream & operator>>(std::istream & is, Student & stu);
-        //  Todo: ?? getline
+        //  make std::getline suitable for stu instance
         friend std::istream & getline(std::istream & is, Student & stu);
         //  << stu
         friend std::ostream &operator<<(std::ostream & os, const Student & stu);

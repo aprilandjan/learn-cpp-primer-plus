@@ -38,6 +38,7 @@
 #include "chapter13/2_virtual_function/use_class_bank_account.h"
 #include "chapter13/3_abstract_base_class/use_abstract_base_class.h"
 #include "chapter13/4_dymanic_memory_in_inheritance/use_fruit.h"
+#include "chapter14/1_complicated_class/use_student.h"
 
 int main() {
 //    using namespace std;
@@ -118,7 +119,10 @@ int main() {
 //    use_class_bank_account();
 //    use_bank_account_list();
 //    use_abstract_base_class();
-    use_fruit();
+//    use_fruit();
+
+    //  chapter14
+    use_student();
 
     return 0;
 }
