@@ -39,6 +39,7 @@
 #include "chapter13/3_abstract_base_class/use_abstract_base_class.h"
 #include "chapter13/4_dymanic_memory_in_inheritance/use_fruit.h"
 #include "chapter14/1_complicated_class/use_student.h"
+#include "chapter14/2_private_inheritance/use_private_ineritance_student.h"
 
 int main() {
 //    using namespace std;
@@ -122,7 +123,8 @@ int main() {
 //    use_fruit();
 
     //  chapter14
-    use_student();
+//    use_student();
+    use_private_inheritance_student();
 
     return 0;
 }
