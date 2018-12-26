@@ -40,6 +40,7 @@
 #include "chapter13/4_dymanic_memory_in_inheritance/use_fruit.h"
 #include "chapter14/1_complicated_class/use_student.h"
 #include "chapter14/2_private_inheritance/use_private_ineritance_student.h"
+#include "chapter14/3_multiple_inheritance/use_derived_worker.h"
 
 int main() {
 //    using namespace std;
@@ -124,7 +125,8 @@ int main() {
 
     //  chapter14
 //    use_student();
-    use_private_inheritance_student();
+//    use_private_inheritance_student();
+    use_derived_worker();
 
     return 0;
 }
