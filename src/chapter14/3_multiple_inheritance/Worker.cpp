@@ -9,20 +9,35 @@ namespace L14_3 {
     //  必须要实现该纯虚函数
     Worker::~Worker() {};
 
-    void Worker::set() {
-        std::cout << "Enter worker's name: \n";
+    void Worker::data() const {
+        std::cout << "Worker[name=" << _name << ", id=" << _id << "]\n";
+    }
+
+    void Worker::get() {
         getline(std::cin, _name);
         std::cout << "Enter worker'is id: \n";
         std::cin >> _id;
+
         //  wait until enter a '\n'
         while(std::cin.get() != '\n') {
             continue;
         }
     }
 
-    void Worker::show() const {
-        std::cout << "Worker[name=" << _name << ", id=" << _id << "]\n";
-    }
+//    void Worker::set() {
+//        std::cout << "Enter worker's name: \n";
+//        getline(std::cin, _name);
+//        std::cout << "Enter worker'is id: \n";
+//        std::cin >> _id;
+//        //  wait until enter a '\n'
+//        while(std::cin.get() != '\n') {
+//            continue;
+//        }
+//    }
+//
+//    void Worker::show() const {
+//        std::cout << "Worker[name=" << _name << ", id=" << _id << "]\n";
+//    }
 
     //  sub-class
     void Waiter::set() {

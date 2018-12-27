@@ -15,6 +15,9 @@ namespace L14_3 {
     private:
         std::string _name;
         long _id;
+    protected:
+        virtual void data() const;
+        virtual void get();
     public:
         Worker(): _name("none"), _id(0){};
         Worker(const std::string & name, long id): _name(name), _id(id){};
@@ -24,9 +27,13 @@ namespace L14_3 {
         virtual void show() const;
     };
 
-    class Waiter: public Worker {
+    //  virtual base class, which make it possible for MI
+    class Waiter: virtual public Worker {
     private:
         std::string _restaurant;
+    protected:
+        void data() const;
+        void get();
     public:
         Waiter(): Worker(), _restaurant("no where") {};
         Waiter(const std::string & name, long id, const std::string & restaurant): Worker(name, id), _restaurant(restaurant){};
@@ -36,7 +43,7 @@ namespace L14_3 {
         void show() const;
     };
 
-    class Singer: public Worker {
+    class Singer: virtual public Worker {
     protected:
         enum {other, alto, contralto, soprano, bass};
         enum {VoiceType = 5};
@@ -44,10 +51,34 @@ namespace L14_3 {
         //  该静态私有成员只声明但未初始化
         static char *pv[VoiceType];
         int _voice;
+    protected:
+        void data() const;
+        void get();
     public:
         Singer(): Worker(), _voice(other){};
         Singer(const std::string & name, long id, int voice): Worker(name, id), _voice(voice){};
         Singer(const Worker & worker, int voice): Worker(worker), _voice(voice){};
+
+        void set();
+        void show() const;
+    };
+
+    //  MI class
+    class SingerWaiter: public Waiter, public Singer {
+    protected:
+        void data() const;
+        void get();
+    public:
+        //  ... this is tooooooooo redundant and complex for coding
+        SingerWaiter() {};
+        SingerWaiter(const std::string & name, long id, const std::string & restaurant, int voice = other):
+                Worker(name, id), Waiter(name, id, restaurant), Singer(name, id, voice) {};
+        SingerWaiter(const Worker & worker, const std::string & restaurant, int voice = other):
+                Worker(worker), Waiter(worker, restaurant), Singer(worker, voice) {};
+        SingerWaiter(const Waiter & waiter, int voice = other):
+                Worker(waiter), Waiter(waiter), Singer(waiter, voice) {};
+        SingerWaiter(const Singer & singer, const std::string restaurant):
+                Worker(singer), Waiter(singer, restaurant), Singer(singer) {};
 
         void set();
         void show() const;
