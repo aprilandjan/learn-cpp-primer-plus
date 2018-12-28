@@ -9,11 +9,7 @@ namespace L14_3 {
     //  必须要实现该纯虚函数
     Worker::~Worker() {};
 
-    void Worker::data() const {
-        std::cout << "Worker[name=" << _name << ", id=" << _id << "]\n";
-    }
-
-    void Worker::get() {
+    void Worker::set_data() {
         getline(std::cin, _name);
         std::cout << "Enter worker'is id: \n";
         std::cin >> _id;
@@ -22,6 +18,11 @@ namespace L14_3 {
         while(std::cin.get() != '\n') {
             continue;
         }
+        std::cout << "done...";
+    }
+
+    void Worker::show_data() const {
+        std::cout << "Worker[name=" << _name << ", id=" << _id << "]\n";
     }
 
 //    void Worker::set() {
@@ -40,22 +41,32 @@ namespace L14_3 {
 //    }
 
     //  sub-class
-    void Waiter::set() {
-        Worker::set();
+    //  implement protected method
+    void Waiter::set_data() {
         std::cout << "Enter waiter's restaurant: \n";
         getline(std::cin, _restaurant);
         while(std::cin.get() != '\n') {
             continue;
         }
     }
-    void Waiter::show() const {
-        std::cout << "Waiter:\n";
-        Worker::show();
+
+    void Waiter::show_data() const {
         std::cout << "works at " << _restaurant << " restaurant.\n";
     }
 
-    //  another sub-class
+    void Waiter::set() {
+        std::cout << "Enter waiter's name:\n";
+        Worker::set_data();
+        set_data();
+    }
+    void Waiter::show() const {
+        std::cout << "Waiter:\n";
+        //  call base class data method
+        Worker::show_data();
+        show_data();
+    }
 
+    //  another sub-class
     //  设置静态私有成员的值
     char * Singer::pv[] = {
             "other",
@@ -65,8 +76,11 @@ namespace L14_3 {
             "bass",
     };
 
-    void Singer::set() {
-        Worker::set();
+    void Singer::show_data() const {
+        std::cout << "Vocal range: " << pv[_voice] << std::endl;
+    }
+
+    void Singer::set_data() {
         std::cout << "Enter number for singer's vocal range:\n";
         //  output available vocals
         int i;
@@ -83,13 +97,43 @@ namespace L14_3 {
         while(std::cin >> _voice && (_voice < 0 || _voice >= VoiceType)) {
             std::cout << "Please enter a value in range [0, " << VoiceType << ");\n";
         }
+        std::cin >> _voice;
         while(std::cin.get() != '\n') {
             continue;
         }
     }
+
+    void Singer::set() {
+        std::cout << "Enter singer's name:\n";
+        Worker::set_data();
+        set_data();
+    }
     void Singer::show() const {
         std::cout << "Singer:\n";
-        Worker::show();
-        std::cout << "Vocal range: " << pv[_voice] << std::endl;
+        Worker::show_data();
+        show_data();
+    }
+
+    // ==== MI class ====
+    void SingerWaiter::show_data() const {
+        Singer::show_data();
+        Waiter::show_data();
+    }
+
+    void SingerWaiter::set_data() {
+        Singer::set_data();
+        Waiter::set_data();
+    }
+
+    void SingerWaiter::set() {
+        std::cout << "Enter a singer-waiter's name:\n";
+        Worker::set_data();
+        set_data();
+    }
+
+    void SingerWaiter::show() const {
+        std::cout << "SingerWaiter:\n";
+        Worker::show_data();
+        show_data();
     }
 }

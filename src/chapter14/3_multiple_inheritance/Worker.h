@@ -16,15 +16,16 @@ namespace L14_3 {
         std::string _name;
         long _id;
     protected:
-        virtual void data() const;
-        virtual void get();
+        virtual void show_data() const;
+        virtual void set_data();
     public:
         Worker(): _name("none"), _id(0){};
         Worker(const std::string & name, long id): _name(name), _id(id){};
         //  pure virtual destructor, make this an ABC
         virtual ~Worker() = 0;
-        virtual void set();
-        virtual void show() const;
+        //  these two functions must be set as = 0, why????
+        virtual void set() = 0;
+        virtual void show() const = 0;
     };
 
     //  virtual base class, which make it possible for MI
@@ -32,8 +33,8 @@ namespace L14_3 {
     private:
         std::string _restaurant;
     protected:
-        void data() const;
-        void get();
+        void show_data() const;
+        void set_data();
     public:
         Waiter(): Worker(), _restaurant("no where") {};
         Waiter(const std::string & name, long id, const std::string & restaurant): Worker(name, id), _restaurant(restaurant){};
@@ -52,8 +53,8 @@ namespace L14_3 {
         static char *pv[VoiceType];
         int _voice;
     protected:
-        void data() const;
-        void get();
+        void show_data() const;
+        void set_data();
     public:
         Singer(): Worker(), _voice(other){};
         Singer(const std::string & name, long id, int voice): Worker(name, id), _voice(voice){};
@@ -66,8 +67,8 @@ namespace L14_3 {
     //  MI class
     class SingerWaiter: public Waiter, public Singer {
     protected:
-        void data() const;
-        void get();
+        void show_data() const;
+        void set_data();
     public:
         //  ... this is tooooooooo redundant and complex for coding
         SingerWaiter() {};
