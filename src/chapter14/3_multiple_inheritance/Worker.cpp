@@ -10,7 +10,10 @@ namespace L14_3 {
     Worker::~Worker() {};
 
     void Worker::set_data() {
-        getline(std::cin, _name);
+        //  if "cin >> xxx" before "getline(cin, xxx)", might buggy
+        //  https://stackoverflow.com/questions/12691316/getline-does-not-work-if-used-after-some-inputs
+        std::cin.ignore();
+        std::getline(std::cin, _name);
         std::cout << "Enter worker'is id: \n";
         std::cin >> _id;
 
@@ -18,7 +21,6 @@ namespace L14_3 {
         while(std::cin.get() != '\n') {
             continue;
         }
-        std::cout << "done...";
     }
 
     void Worker::show_data() const {
@@ -44,6 +46,7 @@ namespace L14_3 {
     //  implement protected method
     void Waiter::set_data() {
         std::cout << "Enter waiter's restaurant: \n";
+        std::cin.ignore();
         getline(std::cin, _restaurant);
         while(std::cin.get() != '\n') {
             continue;
@@ -97,7 +100,6 @@ namespace L14_3 {
         while(std::cin >> _voice && (_voice < 0 || _voice >= VoiceType)) {
             std::cout << "Please enter a value in range [0, " << VoiceType << ");\n";
         }
-        std::cin >> _voice;
         while(std::cin.get() != '\n') {
             continue;
         }

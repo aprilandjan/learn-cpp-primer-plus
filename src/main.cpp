@@ -1,4 +1,3 @@
-#include <iostream>
 #include "chapter/pointer.h"
 #include "chapter/vector_and_array.h"
 #include "chapter/loop_and_relation.h"
