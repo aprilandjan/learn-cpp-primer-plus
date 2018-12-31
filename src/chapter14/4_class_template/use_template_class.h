@@ -7,4 +7,6 @@
 
 void use_template_class();
 
+void dynamic_stack_size();
+
 #endif //LEARN_USE_TEMPLATE_CLASS_H

@@ -127,7 +127,8 @@ int main() {
 //    use_student();
 //    use_private_inheritance_student();
 //    use_derived_worker();
-    use_template_class();
+//    use_template_class();
+    dynamic_stack_size();
 
     return 0;
 }
