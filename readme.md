@@ -45,3 +45,8 @@
 4. [dynamic memory in inheritance](./src/chapter13/4_dymanic_memory_in_inheritance/use_fruit.cpp)
 
 ### chapter14
+
+1. [class instance within class](./src/chapter14/1_complicated_class/use_student.cpp)
+2. [private inheritance](./src/chapter14/2_private_inheritance/use_private_ineritance_student.cpp)
+3. [multiple inheritance](./src/chapter14/3_multiple_inheritance/use_derived_worker.cpp)
+4. [class template](./src/chapter14/4_class_template/use_template_class.cpp)
