@@ -41,6 +41,7 @@
 #include "chapter14/2_private_inheritance/use_private_ineritance_student.h"
 #include "chapter14/3_multiple_inheritance/use_derived_worker.h"
 #include "chapter14/4_class_template/use_template_class.h"
+#include "chapter14/4_class_template/use_template_recursively.h"
 
 int main() {
 //    using namespace std;
@@ -128,7 +129,9 @@ int main() {
 //    use_private_inheritance_student();
 //    use_derived_worker();
 //    use_template_class();
-    dynamic_stack_size();
+//    dynamic_stack_size();
+//    use_template_class();
+    use_template_recursively();
 
     return 0;
 }
