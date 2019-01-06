@@ -50,3 +50,4 @@
 2. [private inheritance](./src/chapter14/2_private_inheritance/use_private_ineritance_student.cpp)
 3. [multiple inheritance](./src/chapter14/3_multiple_inheritance/use_derived_worker.cpp)
 4. [class template](./src/chapter14/4_class_template/use_template_class.cpp)
+5. [class template recursively](./src/chapter14/4_class_template/use_template_recursively.cpp)
