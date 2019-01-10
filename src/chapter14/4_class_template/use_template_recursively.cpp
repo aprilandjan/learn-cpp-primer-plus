@@ -61,3 +61,29 @@ void use_nested_template() {
 
     cout << "done...\n";
 }
+
+#include "Param.h"
+#include "Stack.h"
+
+void use_param_template() {
+    using namespace L14_4;
+
+    //  use ArrayTP as param for template
+    Param<Stack> param;
+
+    int ni;
+    double nd;
+
+    cout << "Enter int double pairs, such as 4 3.5(0 0 to end):\n";
+    while(std::cin >> ni >> nd && ni > 0 && nd > 0) {
+        if (!param.push(ni, nd)) {
+            break;
+        }
+    }
+
+    while(param.pop(ni, nd)) {
+        cout << ni << ", " << nd << endl;
+    }
+
+    cout << "Done.\n";
+}

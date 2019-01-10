@@ -7,5 +7,6 @@
 
 void use_template_recursively();
 void use_nested_template();
+void use_param_template();
 
 #endif //LEARN_USE_TEMPLATE_RECURSIVELY_H
