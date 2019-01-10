@@ -131,7 +131,8 @@ int main() {
 //    use_template_class();
 //    dynamic_stack_size();
 //    use_template_class();
-    use_template_recursively();
+//    use_template_recursively();
+    use_nested_template();
 
     return 0;
 }

@@ -41,3 +41,23 @@ void use_template_recursively() {
 
     std::cout << "Done.\n";
 };
+
+#include "Nested.h"
+
+void use_nested_template() {
+    using namespace L14_4;
+
+    Nested<double> obj(3.5, 3);
+    cout << "T was set to double\n";
+    cout << "K was set to T, which is double, then K was set to int\n";
+    obj.show();
+
+    //  this is very likely to Typescript Type inference...
+    cout << "\nK was set to int:\n";
+    cout << obj.output(10, 3.2) << endl;
+
+    cout << "\nthen, K set to double:\n";
+    cout << obj.output(10.0, 3.2) << endl;
+
+    cout << "done...\n";
+}
