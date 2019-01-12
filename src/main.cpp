@@ -42,6 +42,7 @@
 #include "chapter14/3_multiple_inheritance/use_derived_worker.h"
 #include "chapter14/4_class_template/use_template_class.h"
 #include "chapter14/4_class_template/use_template_recursively.h"
+#include "chapter14/4_class_template/friend_in_template.h"
 
 int main() {
 //    using namespace std;
@@ -133,7 +134,8 @@ int main() {
 //    use_template_class();
 //    use_template_recursively();
 //    use_nested_template();
-    use_param_template();
+//    use_param_template();
+    use_friend_in_template();
 
     return 0;
 }
