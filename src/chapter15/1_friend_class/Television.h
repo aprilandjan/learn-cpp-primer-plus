@@ -10,7 +10,7 @@ namespace L15_1 {
     private:
         //  is on or not
         int _state;
-        int _volumn;
+        int _volume;
         int _max_channel;
         int _channel;
         int _mode;
@@ -23,7 +23,7 @@ namespace L15_1 {
         enum {Antenna, Cable};
         enum {TV, DVD};
 
-        Television(int s = Off, int mc = 125): _state(s), _volumn(5), _max_channel(mc), _channel(2), _mode(Cable), _input(TV){};
+        Television(int s = Off, int mc = 125): _state(s), _volume(5), _max_channel(mc), _channel(2), _mode(Cable), _input(TV){};
         void toggle() {
             _state = _state == On ? Off : On;
         }
