@@ -23,7 +23,7 @@ namespace L15_2 {
         Node * _last;
         int _size;
         int _limit;
-        //  ...
+        //  make these two constructor private, so cant "QueueTemplate copy(q)"
         QueueTemplate(const QueueTemplate & q): _limit(0){};
         //  赋值构造函数
         QueueTemplate &operator=(const QueueTemplate & q) {

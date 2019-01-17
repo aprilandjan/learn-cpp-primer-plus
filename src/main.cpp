@@ -44,6 +44,7 @@
 #include "chapter14/4_class_template/use_template_recursively.h"
 #include "chapter14/4_class_template/friend_in_template.h"
 #include "chapter15/1_friend_class/use_tv.h"
+#include "chapter15/2_nested_class/use_nested_class.h"
 
 int main() {
 //    using namespace std;
@@ -139,7 +140,8 @@ int main() {
 //    use_friend_in_template();
 
     //  chapter15
-    use_tv();
+//    use_tv();
+    use_nested_class();
 
     return 0;
 }
