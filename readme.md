@@ -51,3 +51,8 @@
 3. [multiple inheritance](./src/chapter14/3_multiple_inheritance/use_derived_worker.cpp)
 4. [class template](./src/chapter14/4_class_template/use_template_class.cpp)
 5. [class template recursively](./src/chapter14/4_class_template/use_template_recursively.cpp)
+
+### chapter15
+
+1. [friend class](./src/chapter15/1_friend_class/use_tv.cpp);
+2. [nested class](./src/chapter15/2_nested_class/use_nested_class.cpp);
