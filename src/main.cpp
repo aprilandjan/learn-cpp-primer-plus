@@ -45,6 +45,7 @@
 #include "chapter14/4_class_template/friend_in_template.h"
 #include "chapter15/1_friend_class/use_tv.h"
 #include "chapter15/2_nested_class/use_nested_class.h"
+#include "chapter15/3_exception/use_abort.h"
 
 int main() {
 //    using namespace std;
@@ -141,7 +142,9 @@ int main() {
 
     //  chapter15
 //    use_tv();
-    use_nested_class();
+//    use_nested_class();
+//    use_abort();
+    use_no_abort();
 
     return 0;
 }

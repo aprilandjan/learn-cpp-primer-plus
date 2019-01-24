@@ -32,5 +32,5 @@ void use_nested_class() {
         cout << "Now processing " << temp << "...\n";
     }
 
-    QueueTemplate<string> copy(str_list);
+//    QueueTemplate<string> copy(str_list);
 }
