@@ -54,5 +54,6 @@
 
 ### chapter15
 
-1. [friend class](./src/chapter15/1_friend_class/use_tv.cpp);
-2. [nested class](./src/chapter15/2_nested_class/use_nested_class.cpp);
+1. [friend class](./src/chapter15/1_friend_class/use_tv.cpp)
+2. [nested class](./src/chapter15/2_nested_class/use_nested_class.cpp)
+3. [exception](./src/chapter15/3_exception/use_abort.cpp)
