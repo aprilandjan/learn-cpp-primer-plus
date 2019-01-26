@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "use_abort.h"
+#include "capture_exception.h"
 
 /**
  * 计算调和平均数
@@ -71,4 +71,53 @@ void use_no_abort() {
         std::cout << "Enter next set(q to quit): ";
     }
     std::cout << "Bye!\n";
+}
+
+double get_harmonic_mean_safely(double x, double y) {
+    if (x == -y) {
+        throw "Invalid arguments: x = -y is not allowed";
+    }
+    return 2.0 * x * y / (x + y);
+}
+
+void use_try_catch() {
+    double x, y, z;
+    std::cout << "Enter two numbers: ";
+    while(std::cin >> x >> y) {
+        try {
+            z = get_harmonic_mean_safely(x, y);
+            std::cout << "Harmonic mean of " << x << " and " << y << " is " << z << std::endl;
+        } catch(const char * s) {   //  catch what throwed?..
+            std::cout << "Invali set, Please try again!\n";
+            continue;
+        }
+        std::cout << "Enter next set(q to quit): ";
+    }
+}
+
+//  try catch with exception instance
+double get_harmonic_mean_with_possible_exception(double x, double y) {
+    using namespace L15_3;
+    if (x == -y) {
+        //  throw should not "new" error(which is actually a pointer)
+        throw BadMeanArgumentException(x, y);
+    }
+    return 2.0 * x * y / (x + y);
+}
+
+void use_try_catch_exception_instance() {
+    using namespace L15_3;
+
+    double x, y, z;
+    std::cout << "Enter two numbers: ";
+    while(std::cin >> x >> y) {
+        try {
+            z = get_harmonic_mean_with_possible_exception(x, y);
+            std::cout << "Harmonic mean of " << x << " and " << y << " is " << z << std::endl;
+        } catch(const BadMeanArgumentException & e) {
+            e.msg();
+//            continue;
+        }
+        std::cout << "Enter next set(q to quit): ";
+    }
 }
