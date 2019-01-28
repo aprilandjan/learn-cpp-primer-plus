@@ -131,6 +131,7 @@ void use_exception_class() {
     std::cout << "Max allowed size: " << SIZE_MAX << std::endl;
     const int NUM_STUFF = 25000;
     int NUM_BIG = 10730;  //  it seems the compiler knows that it is too large than limit (2048M?...)
+    //  https://stackoverflow.com/questions/5686459/what-is-the-maximum-memory-available-to-a-c-application-on-32-bit-windows
 
     std::cout << "Please input a size: " << std::endl;
     std::cin >> NUM_BIG;
