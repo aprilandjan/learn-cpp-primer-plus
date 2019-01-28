@@ -121,3 +121,40 @@ void use_try_catch_exception_instance() {
         std::cout << "Enter next set(q to quit): ";
     }
 }
+
+//========= use exception class instance ===========
+#include <new>
+#include <exception>
+#include <cstring>
+
+void use_exception_class() {
+    std::cout << "Max allowed size: " << SIZE_MAX << std::endl;
+    const int NUM_STUFF = 25000;
+    int NUM_BIG = 10730;  //  it seems the compiler knows that it is too large than limit (2048M?...)
+
+    std::cout << "Please input a size: " << std::endl;
+    std::cin >> NUM_BIG;
+    //  sizeof(double) = 8byte = 64bit
+    //  memory: 1K = 1024byte
+    double size_bytes = NUM_BIG * NUM_STUFF * sizeof(double);
+    std::cout << "Bytes need to be alloc: " << size_bytes << "(" << size_bytes / (1024 * 1024) << "MB)" << std::endl;
+    struct Big {
+        double stuff[NUM_STUFF];
+    };
+
+    Big * pb;
+    try {
+        std::cout << "Try to get a very big block of memory:\n";
+        pb = new Big[NUM_BIG];
+    } catch (std::bad_alloc & ba) {
+        std::cout << "Caught Exception: \n";
+        std::cout << ba.what() << std::endl;
+        //  in 'cstdlib'
+        exit(EXIT_FAILURE);
+    }
+
+    std::cout << "Memory allocated!\n";
+    pb[0].stuff[0] = 4;
+    std::cout << pb[0].stuff[0] << "\n";
+    delete [] pb;
+}

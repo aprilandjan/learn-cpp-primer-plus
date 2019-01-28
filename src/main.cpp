@@ -146,7 +146,8 @@ int main() {
 //    use_abort();
 //    use_no_abort();
 //    use_try_catch();
-    use_try_catch_exception_instance();
+//    use_try_catch_exception_instance();
+    use_exception_class();
 
     return 0;
 }

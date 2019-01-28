@@ -27,4 +27,6 @@ namespace L15_3 {
     };
 }
 
+void use_exception_class();
+
 #endif //LEARN_USE_ABORT_H
