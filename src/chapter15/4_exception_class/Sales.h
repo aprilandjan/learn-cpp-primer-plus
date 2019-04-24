@@ -24,7 +24,8 @@ namespace L15_4 {
                 return _bad_value;
             }
             // Todo: what does "throw" mean? throwable?
-            virtual ~bad_index() throw() {};
+            // virual: ALLOW runtime polymorphism. so destructor call will be on correct class method
+            virtual ~BadIndex() throw() {};
         };
         explicit Sales(int y = 0);
         Sales(int y, const double & gr, int n);
@@ -32,8 +33,9 @@ namespace L15_4 {
         int get_year() const {
             return _year;
         }
-        //  数组形式取值 & 设置值
+        //  数组取值
         virtual double operator[](int i) const;
+        //  数组设置值（实际是取地址，因此可以对地址处赋值）
         virtual double &operator[](int i);
     private:
         double _gross[MONTHS];

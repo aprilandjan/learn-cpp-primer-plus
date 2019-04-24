@@ -46,6 +46,7 @@
 #include "chapter15/1_friend_class/use_tv.h"
 #include "chapter15/2_nested_class/use_nested_class.h"
 #include "chapter15/3_exception/capture_exception.h"
+#include "chapter15/4_exception_class/use_sales.h"
 
 int main() {
 //    using namespace std;
@@ -147,7 +148,8 @@ int main() {
 //    use_no_abort();
 //    use_try_catch();
 //    use_try_catch_exception_instance();
-    use_exception_class();
+//    use_exception_class();
+    use_sales();
 
     return 0;
 }
