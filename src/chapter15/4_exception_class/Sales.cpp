@@ -6,6 +6,7 @@
 using std::string;
 
 namespace L15_4 {
+    //====== Sales =====//
     Sales::BadIndex::BadIndex(int ix, const std::string &s): _bad_value(ix), std::logic_error(s) {
         // direct init
     }
@@ -18,12 +19,13 @@ namespace L15_4 {
         }
     }
 
-    Sales::Sales(int y, const double &gr, int n) {
+    Sales::Sales(int y, const double * gr, int n) {
         _year = y;
         int limit = (n < MONTHS) ? n : MONTHS;
         int i;
         for (i = 0; i < limit; i++) {
-            _gross[i] = (&gr)[i];
+            //  gr is pointer to double array, gr[i] is i-th pointer in this array
+            _gross[i] = gr[i];
         }
         // else
         for(;i < MONTHS; i++) {
@@ -46,4 +48,17 @@ namespace L15_4 {
         }
         return _gross[i];
     }
+    //==== LabeledSales ====//
+    LabeledSales::NBadIndex::NBadIndex(const std::string & lb, int ix, const std::string &s): Sales::BadIndex(ix, s) {
+    };
+
+    LabeledSales::LabeledSales(const std::string & lb, int y): Sales(y) {
+        _label = lb;
+    };
+
+    LabeledSales::LabeledSales(const std::string & lb, int y, const double *gr, int n): Sales(y, gr, n) {
+        _label = lb;
+    };
+
+
 }

@@ -28,7 +28,7 @@ namespace L15_4 {
             virtual ~BadIndex() throw() {};
         };
         explicit Sales(int y = 0);
-        Sales(int y, const double & gr, int n);
+        Sales(int y, const double * gr, int n);
         virtual ~Sales(){};
         int get_year() const {
             return _year;

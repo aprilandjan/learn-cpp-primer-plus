@@ -6,7 +6,7 @@ When call method on a class instance, the actual called method is decided by cal
 
 ## When to use virtual function
 
-### virtual destruction  for base class.
+- virtual destruction for base class
 
 ## reference
 
