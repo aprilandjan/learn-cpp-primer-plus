@@ -60,5 +60,19 @@ namespace L15_4 {
         _label = lb;
     };
 
+    //  数组取值
+    double LabeledSales::operator[](int i) const {
+        if (i < 0 || i >= MONTHS) {
+            throw NBadIndex(get_label(), i);
+        }
+        return Sales::operator[](i);
+    }
 
+    //  数组取地址
+    double& LabeledSales::operator[](int i) {
+        if (i < 0 || i >= MONTHS) {
+            throw NBadIndex(get_label(), i);
+        }
+        return Sales::operator[](i);
+    }
 }

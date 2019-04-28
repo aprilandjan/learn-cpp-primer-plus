@@ -19,4 +19,7 @@ void use_sales() {
     //  allocate a pointer, points to 'sales' actual location
     Sales *ps = &sales;
     std::cout << "2018 ps: " << (*ps)[1] << std::endl;
+
+    LabeledSales ls("abcd");
+    std::cout << "abcd: " << ls[2] << std::endl;
 }
