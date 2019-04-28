@@ -65,6 +65,7 @@ namespace L15_4 {
         if (i < 0 || i >= MONTHS) {
             throw NBadIndex(get_label(), i);
         }
+        // the next line of code is *wrongly* marked error in clion
         return Sales::operator[](i);
     }
 
