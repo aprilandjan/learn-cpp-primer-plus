@@ -50,6 +50,7 @@ namespace L15_4 {
     }
     //==== LabeledSales ====//
     LabeledSales::NBadIndex::NBadIndex(const std::string & lb, int ix, const std::string &s): Sales::BadIndex(ix, s) {
+        _lbl = lb;
     };
 
     LabeledSales::LabeledSales(const std::string & lb, int y): Sales(y) {
