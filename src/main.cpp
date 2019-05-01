@@ -47,6 +47,7 @@
 #include "chapter15/2_nested_class/use_nested_class.h"
 #include "chapter15/3_exception/capture_exception.h"
 #include "chapter15/4_exception_class/use_sales.h"
+#include "chapter15/5_runtime_type_identification/use_rtti.h"
 
 int main() {
 //    using namespace std;
@@ -149,7 +150,8 @@ int main() {
 //    use_try_catch();
 //    use_try_catch_exception_instance();
 //    use_exception_class();
-    use_sales();
+//    use_sales();
+    use_rtti();
 
     return 0;
 }
