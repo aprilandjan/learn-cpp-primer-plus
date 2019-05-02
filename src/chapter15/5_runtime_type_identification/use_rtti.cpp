@@ -109,3 +109,27 @@ L15_5::Grand * get_one() {
     //  a base-class pointer may actually points to derived class
     return p;
 }
+
+//====================
+void get_type_info() {
+    using namespace L15_5;
+    using std::cout;
+    using std::endl;
+
+    srand(time(0));
+    Grand * pg;
+    Superb * ps;
+    for (int i = 0; i < 5; i++) {
+        cout << "\n Loop " << i << ":\n";
+        pg = get_one();
+        cout << "Now processing type " << typeid(*pg).name() << "\n";
+        pg ->speak();
+        if (ps = dynamic_cast<Superb *>(pg)) {
+            ps->say();
+        }
+        //  similar to 'pg instanceof Magnificent'
+        if (typeid(Magnificent) == typeid(*pg)) {
+            cout << "Yes, you area really magnificent.......\n";
+        }
+    }
+}

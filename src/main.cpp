@@ -151,7 +151,8 @@ int main() {
 //    use_try_catch_exception_instance();
 //    use_exception_class();
 //    use_sales();
-    use_rtti();
+//    use_rtti();
+    get_type_info();
 
     return 0;
 }

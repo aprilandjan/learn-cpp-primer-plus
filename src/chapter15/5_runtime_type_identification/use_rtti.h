@@ -7,4 +7,6 @@
 
 void use_rtti();
 
+void get_type_info();
+
 #endif //LEARN_USE_RTTI_H
