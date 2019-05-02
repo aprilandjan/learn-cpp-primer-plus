@@ -8,6 +8,8 @@
 //  provide std::rand
 #include <cstdlib>
 #include <ctime>
+//  provide bad_cast exception
+#include <typeinfo>
 
 namespace L15_5 {
     using std::cout;
@@ -72,6 +74,16 @@ void use_rtti() {
             cout << "\n";
         } else {
             cout << "I am not able to say...\n\n";
+        }
+
+        //  since pg is address, *pg is the value behind the adress
+//        Grand & rg = *pg;
+
+        try {
+            Superb & rs = dynamic_cast<Superb &>(*pg);
+            cout << "Success cast to ref...\n";
+        } catch (std::bad_cast & err) {
+            cout << "Error: " << err.what();
         }
     }
 }
