@@ -155,7 +155,8 @@ int main() {
 //    use_rtti();
 //    get_type_info();
 //    string_constructors();
-    string_files();
+//    string_files();
+    string_capacity();
 
     return 0;
 }

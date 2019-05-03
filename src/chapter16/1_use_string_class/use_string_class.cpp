@@ -89,3 +89,25 @@ void string_files() {
     cout << "Done!\n";
     file_input.close();
 }
+
+void string_capacity(){
+    using namespace std;
+    string empty;
+    string small = "bit";
+    string larger = "Today is friday and a weekend is coming.";
+
+    cout << "Sizes:\n";
+    cout << "\tempty: " << empty.size() << endl;
+    cout << "\tsmall: " << small.size() << endl;
+    cout << "\tlarger: " << larger.size() << endl;
+
+    //  string.capacity: returns the actual memory block size allocated for this string instance
+    cout << "Capacities:\n";
+    cout << "\tempty: " << empty.capacity() << endl;
+    cout << "\tsmall: " << small.capacity() << endl;
+    cout << "\tlarger: " << larger.capacity() << endl;
+
+    //  manually reserve memory block size
+    empty.reserve(50);
+    cout << "Capacity after empty.reserve(50): " << empty.capacity() << endl;
+}

@@ -9,4 +9,6 @@ void string_constructors();
 
 void string_files();
 
+void string_capacity();
+
 #endif //LEARN_USE_STRING_CLASS_H
