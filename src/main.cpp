@@ -48,6 +48,7 @@
 #include "chapter15/3_exception/capture_exception.h"
 #include "chapter15/4_exception_class/use_sales.h"
 #include "chapter15/5_runtime_type_identification/use_rtti.h"
+#include "chapter16/1_use_string_class/use_string_class.h"
 
 int main() {
 //    using namespace std;
@@ -152,7 +153,8 @@ int main() {
 //    use_exception_class();
 //    use_sales();
 //    use_rtti();
-    get_type_info();
+//    get_type_info();
+    use_string_class();
 
     return 0;
 }
