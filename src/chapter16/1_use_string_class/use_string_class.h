@@ -5,6 +5,8 @@
 #ifndef LEARN_USE_STRING_CLASS_H
 #define LEARN_USE_STRING_CLASS_H
 
-void use_string_class();
+void string_constructors();
+
+void string_files();
 
 #endif //LEARN_USE_STRING_CLASS_H

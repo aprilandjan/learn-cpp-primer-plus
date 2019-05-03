@@ -154,7 +154,8 @@ int main() {
 //    use_sales();
 //    use_rtti();
 //    get_type_info();
-    use_string_class();
+//    string_constructors();
+    string_files();
 
     return 0;
 }

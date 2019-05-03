@@ -7,7 +7,7 @@
 //  provide string class
 #include <string>
 
-void use_string_class() {
+void string_constructors() {
     using namespace std;
 
     // 1
@@ -55,4 +55,37 @@ void use_string_class() {
     // 7. also string.substr(a, b)
     string seven(four, 7, 16);
     cout << seven << endl;
+}
+
+#include <cstdlib>
+#include <fstream>
+
+void string_files() {
+    using namespace std;
+
+    //  input file stream instance
+    ifstream file_input;
+    file_input.open("tobuy.txt");
+
+    if (file_input.is_open() == false) {
+        //  similar to "console.error" ?
+        cerr << "Cannot open file...\n";
+        exit(EXIT_FAILURE); // process.exit(x)
+    } else {
+        //  must create the file manually...
+        cout << "open file successfully...\n";
+    }
+
+    string item;
+    int count = 0;
+    getline(file_input, item, ':');
+    while(file_input) {
+        ++count; // line count, split by ':' (by default it is '\n')
+        cout << count << ": " << item << endl;
+        //  can this turned to "do {} while" ?
+        getline(file_input, item, ':');
+    }
+
+    cout << "Done!\n";
+    file_input.close();
 }
