@@ -49,6 +49,7 @@
 #include "chapter15/4_exception_class/use_sales.h"
 #include "chapter15/5_runtime_type_identification/use_rtti.h"
 #include "chapter16/1_use_string_class/use_string_class.h"
+#include "chapter16/2_smart_pointers/use_smart_pointers.h"
 
 int main() {
 //    using namespace std;
@@ -154,9 +155,12 @@ int main() {
 //    use_sales();
 //    use_rtti();
 //    get_type_info();
+
+    //  chapter 16
 //    string_constructors();
 //    string_files();
-    string_capacity();
+//    string_capacity();
+    use_smart_pointers();
 
     return 0;
 }
