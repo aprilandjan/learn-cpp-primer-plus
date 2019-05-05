@@ -7,4 +7,6 @@
 
 void use_smart_pointers();
 
+void why_not_use_auto_pointer();
+
 #endif //LEARN_USE_SMART_POINTERS_H

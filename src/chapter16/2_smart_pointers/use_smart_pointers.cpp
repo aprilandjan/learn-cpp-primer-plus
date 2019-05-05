@@ -61,3 +61,18 @@ void use_smart_pointers() {
         cout << "s: " << s;
     }
 }
+
+void why_not_use_auto_pointer() {
+    using namespace std;
+
+    auto_ptr<string> films[5] = {
+            auto_ptr<string>(new string("The Iron Man")),
+            auto_ptr<string>(new string("The amazing four")),
+            auto_ptr<string>(new string("Capital America")),
+            auto_ptr<string>(new string("The spiderman")),
+            auto_ptr<string>(new string("The superman")),
+    };
+
+    auto_ptr<string> pwin;
+    pwin = films[2];
+}
