@@ -73,6 +73,42 @@ void why_not_use_auto_pointer() {
             auto_ptr<string>(new string("The superman")),
     };
 
+    //  when dispose, these two auto pointer will both try to free same memory on heap
     auto_ptr<string> pwin;
+    pwin = films[2];  // film[2] lose owner ship， point to a null pointer
+
+    std::cout << "The mavel movies are:\n";
+    for (int i = 0; i < 5; i++) {
+        std::cout << *films[i] << std::endl;
+    }
+    std::cout << "The winner is " << *pwin << "!\n";
+//    cin.get();
+}
+
+// C++ 11 support shared pointer
+void use_shared_pointer() {
+    using namespace std;
+
+    shared_ptr<string> films[5] = {
+            shared_ptr<string>(new string("The Iron Man")),
+            shared_ptr<string>(new string("The amazing four")),
+            shared_ptr<string>(new string("Capital America")),
+            shared_ptr<string>(new string("The spiderman")),
+            shared_ptr<string>(new string("The superman")),
+    };
+
+    shared_ptr<string> pwin;
+    //  point to same string, reference count ++
     pwin = films[2];
+
+    std::cout << "The mavel movies are:\n";
+    for (int i = 0; i < 5; i++) {
+        std::cout << *films[i] << std::endl;
+    }
+    std::cout << "The winner is " << *pwin << "!\n";
+//    cin.get();
+}
+
+void use_unique_pointer() {
+    //
 }

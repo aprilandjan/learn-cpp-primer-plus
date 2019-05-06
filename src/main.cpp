@@ -160,7 +160,9 @@ int main() {
 //    string_constructors();
 //    string_files();
 //    string_capacity();
-    use_smart_pointers();
+//    use_smart_pointers();
+//    why_not_use_auto_pointer();
+    use_shared_pointer();
 
     return 0;
 }
