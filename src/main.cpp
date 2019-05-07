@@ -50,6 +50,7 @@
 #include "chapter15/5_runtime_type_identification/use_rtti.h"
 #include "chapter16/1_use_string_class/use_string_class.h"
 #include "chapter16/2_smart_pointers/use_smart_pointers.h"
+#include "chapter16/3_standard_template_library/stl_vector.h"
 
 int main() {
 //    using namespace std;
@@ -163,7 +164,8 @@ int main() {
 //    use_smart_pointers();
 //    why_not_use_auto_pointer();
 //    use_shared_pointer();
-    use_unique_pointer();
+//    use_unique_pointer();
+    use_stl_vector();
 
     return 0;
 }
