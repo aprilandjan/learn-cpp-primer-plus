@@ -162,7 +162,8 @@ int main() {
 //    string_capacity();
 //    use_smart_pointers();
 //    why_not_use_auto_pointer();
-    use_shared_pointer();
+//    use_shared_pointer();
+    use_unique_pointer();
 
     return 0;
 }

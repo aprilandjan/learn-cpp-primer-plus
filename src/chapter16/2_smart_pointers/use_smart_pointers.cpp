@@ -110,5 +110,29 @@ void use_shared_pointer() {
 }
 
 void use_unique_pointer() {
-    //
+    using namespace std;
+
+    unique_ptr<string> films[5] = {
+            unique_ptr<string>(new string("The Iron Man")),
+            unique_ptr<string>(new string("The amazing four")),
+            unique_ptr<string>(new string("Capital America")),
+            unique_ptr<string>(new string("The spiderman")),
+            unique_ptr<string>(new string("The superman")),
+    };
+
+    unique_ptr<string> pwin;
+    //  unique pointer cannot be rvalue when assign directly
+//    pwin = films[2];
+    //  when use std::move to pass ownership, it will be like auto_ptr
+    pwin = std::move(films[2]);
+
+    std::cout << "The mavel movies are:\n";
+    for (int i = 0; i < 5; i++) {
+        if (films[i] != nullptr) {
+            std::cout << *films[i] << std::endl;
+        } else {
+            std::cout << i << " is empty" << std::endl;
+        }
+    }
+    std::cout << "The winner is " << *pwin << "!\n";
 }
