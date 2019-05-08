@@ -36,3 +36,48 @@ void use_stl_vector () {
         cout << ratings[i] << "\t" << titles[i] << "\n";
     }
 }
+
+struct Review {
+    std::string title;
+    int rating;
+};
+
+//  fill a review object
+bool fill_review(Review & r);
+//  show review content
+bool show_review(const Review & r);
+
+void vector_operations() {
+    using std::vector;
+    using std::cout;
+    using std::cin;
+    using std::string;
+
+    vector<Review> books;
+    Review temp;
+
+    while(fill_review(temp)) {
+        //  Array.push
+        //  copy constructor?
+        books.push_back(temp);
+    }
+}
+
+bool fill_review(Review & r) {
+    std::cout << "\nEnter book title (q to quit): ";
+    std::getline(std::cin, r.title);
+    if (r.title == "q") {
+        return false;
+    }
+    std::cout << "Enter book rating: ";
+    std::cin >> r.rating;
+
+    if (!std::cin) {
+        return false;
+    }
+    //  get rid of rest of input line
+    while(std::cin.get() != '\n') {
+        continue;
+    }
+    return true;
+}

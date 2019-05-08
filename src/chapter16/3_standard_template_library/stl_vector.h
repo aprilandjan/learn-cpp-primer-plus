@@ -7,4 +7,6 @@
 
 void use_stl_vector();
 
+void vector_operations();
+
 #endif //LEARN_STL_VECTOR_H

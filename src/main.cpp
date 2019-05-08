@@ -165,7 +165,8 @@ int main() {
 //    why_not_use_auto_pointer();
 //    use_shared_pointer();
 //    use_unique_pointer();
-    use_stl_vector();
+//    use_stl_vector();
+    vector_operations();
 
     return 0;
 }
