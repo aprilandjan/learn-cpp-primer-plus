@@ -56,7 +56,7 @@ void vector_operations() {
     vector<Review> books;
     Review temp;
 
-    while(fill_review(temp)) {
+    while (fill_review(temp)) {
         //  Array.push
         //  copy constructor?
         books.push_back(temp);
