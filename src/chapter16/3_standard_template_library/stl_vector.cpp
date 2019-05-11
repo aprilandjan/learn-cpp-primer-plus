@@ -61,6 +61,45 @@ void vector_operations() {
         //  copy constructor?
         books.push_back(temp);
     }
+
+    //  arr.length
+    int num = books.size();
+    if (num > 0) {
+        cout << "You entered the following:\nRating\tBook\n";
+        for(int i = 0; i < num; i++) {
+            show_review(books[i]);
+        }
+
+        cout << "Re-prising:\nRating\tBook\n";
+
+        // iterator: a pointer-like object
+        // loop through vector
+        vector<Review>::iterator pr;
+        for(pr = books.begin(); pr != books.end(); pr++) {
+            //  pointer de-reference
+            show_review(*pr);
+        }
+
+        //  copy-constructor
+        vector<Review> oldlist(books);
+        if (num > 3) {
+            //  Array.splice remove, [from, to)
+            books.erase(books.begin() + 1, books.begin() + 3);
+            cout << "After erasure:\n";
+            for(pr = books.begin(); pr != books.end(); pr++) {
+                show_review(*pr);
+            }
+            //  Array.concat insert.
+            books.insert(books.begin(), oldlist.begin() + 1, oldlist.begin() + 2);
+            cout << "After insertion:\n";
+            for(pr = books.begin(); pr != books.end(); pr++) {
+                show_review(*pr);
+            }
+        } else {
+            cout << "Nothing entered, nothing gained.\n";
+        }
+    }
+
 }
 
 bool fill_review(Review & r) {
@@ -80,4 +119,8 @@ bool fill_review(Review & r) {
         continue;
     }
     return true;
+}
+
+bool show_review(const Review & r) {
+    std::cout << r.rating << "\t" << r.title << "\n";
 }
