@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+//  provide non-member function, like sort, for_each, etc.
+#include <algorithm>
 
 void use_stl_vector () {
     using std::vector;
@@ -46,6 +48,10 @@ struct Review {
 bool fill_review(Review & r);
 //  show review content
 bool show_review(const Review & r);
+
+bool operator<(const Review & r1, const Review & r2);
+
+bool worseThan(const Review & r1, const Review & r2);
 
 void vector_operations() {
     using std::vector;
@@ -98,6 +104,20 @@ void vector_operations() {
         } else {
             cout << "Nothing entered, nothing gained.\n";
         }
+
+        //  sort
+        cout << "Sort by title:\nRating\tTitle\n";
+        sort(oldlist.begin(), oldlist.end());
+        for_each(oldlist.begin(), oldlist.end(), show_review);
+
+        cout << "Sort by rating:\nRating\tTitle\n";
+        sort(oldlist.begin(), oldlist.end(), worseThan);
+        for_each(oldlist.begin(), oldlist.end(), show_review);
+
+        //  shuffle
+        cout << "Random shuffle:\nRating\tTitle\n";
+        random_shuffle(oldlist.begin(), oldlist.end());
+        for_each(oldlist.begin(), oldlist.end(), show_review);
     }
 
 }
@@ -123,4 +143,21 @@ bool fill_review(Review & r) {
 
 bool show_review(const Review & r) {
     std::cout << r.rating << "\t" << r.title << "\n";
+}
+
+//  define r1 < r2 overloading
+bool operator<(const Review & r1, const Review & r2) {
+    if (r1.title < r2.title) {
+        return true;
+    } else if (r1.title == r2.title && r1.rating < r2.rating) {
+        return true;
+    }
+    return false;
+}
+
+bool worseThan(const Review & r1, const Review & r2) {
+    if (r1.rating < r2.rating) {
+        return true;
+    }
+    return false;
 }
