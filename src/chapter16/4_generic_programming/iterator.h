@@ -5,4 +5,6 @@
 #ifndef LEARN_ITERATOR_H
 #define LEARN_ITERATOR_H
 
+void use_iterator_copy();
+
 #endif //LEARN_ITERATOR_H
