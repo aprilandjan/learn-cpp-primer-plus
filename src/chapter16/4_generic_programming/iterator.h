@@ -7,4 +7,6 @@
 
 void use_iterator_copy();
 
+void use_iterator_insert();
+
 #endif //LEARN_ITERATOR_H

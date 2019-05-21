@@ -168,7 +168,8 @@ int main() {
 //    use_unique_pointer();
 //    use_stl_vector();
 //    vector_operations();
-    use_iterator_copy();
+//    use_iterator_copy();
+    use_iterator_insert();
 
     return 0;
 }
