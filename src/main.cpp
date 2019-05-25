@@ -52,6 +52,7 @@
 #include "chapter16/2_smart_pointers/use_smart_pointers.h"
 #include "chapter16/3_standard_template_library/stl_vector.h"
 #include "chapter16/4_generic_programming/iterator.h"
+#include "chapter16/4_generic_programming/container.h"
 
 int main() {
 //    using namespace std;
@@ -169,7 +170,8 @@ int main() {
 //    use_stl_vector();
 //    vector_operations();
 //    use_iterator_copy();
-    use_iterator_insert();
+//    use_iterator_insert();
+    use_container_list();
 
     return 0;
 }
