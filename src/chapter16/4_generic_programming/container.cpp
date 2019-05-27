@@ -79,3 +79,81 @@ void use_container_list() {
     for_each(three.begin(), three.end(), output);
     cout << endl;
 }
+
+#include <set>
+
+void use_container_set() {
+    using namespace std;
+
+    const int N = 6;
+    string s1[N] = {
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thur",
+            "Mon",
+            "Sat",
+    };
+
+    string s2[N] = {
+            "Jan",
+            "Feb",
+            "March",
+            "Mon",
+            "May",
+            "April"
+    };
+
+    set<string> A(s1, s1 + N);
+    set<string> B(s2, s2 + N);
+
+    //  a set will automatically unique its members
+    ostream_iterator<string, char> out(cout, " ");
+    cout << "Set A: ";
+    copy(A.begin(), A.end(), out);
+    cout << endl;
+
+    cout << "Set B: ";
+    copy(B.begin(), B.end(), out);
+    cout << endl;
+
+    //  provide by 'algorithm'
+    //  again, make member unique
+    cout << "Union of A and B:\n";
+    set_union(A.begin(), A.end(), B.begin(), B.end(), out);
+    cout << endl;
+
+    //  exact same as concepts in math
+    cout << "Intersection of A and B:\n";
+    set_intersection(A.begin(), A.end(), B.begin(), B.end(), out);
+    cout << endl;
+
+    //  A diff B, B diff A, not same
+    cout << "Difference of A and B:\n";
+    set_difference(A.begin(), A.end(), B.begin(), B.end(), out);
+    cout << endl;
+
+    cout << "Difference of B and A:\n";
+    set_difference(B.begin(), B.end(), A.begin(), A.end(), out);
+    cout << endl;
+
+    cout << endl;
+
+    set<string> C;
+    cout << "Set C:\n";
+    //  use 'insert_iterator' to make copy into insert
+    set_union(A.begin(), A.end(), B.begin(), B.end(), insert_iterator<set<string>>(C, C.begin()));
+    copy(C.begin(), C.end(), out);
+    cout << endl << endl;
+
+    string s3("Gruuuu");
+    C.insert(s3);
+    cout << "Set C after insertion:\n";
+    copy(C.begin(), C.end(), out);
+    cout << endl << endl;
+
+    //  output closed interval [a, b]
+    cout << "Showing a range:\n";
+    copy(C.lower_bound("Gruuuu"), C.upper_bound("May"), out);
+    cout << endl;
+}

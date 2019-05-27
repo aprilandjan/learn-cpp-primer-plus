@@ -171,7 +171,8 @@ int main() {
 //    vector_operations();
 //    use_iterator_copy();
 //    use_iterator_insert();
-    use_container_list();
+//    use_container_list();
+    use_container_set();
 
     return 0;
 }
