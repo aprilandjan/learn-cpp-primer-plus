@@ -9,4 +9,6 @@ void use_container_list();
 
 void use_container_set();
 
+void use_container_map();
+
 #endif //LEARN_CONTAINER_H

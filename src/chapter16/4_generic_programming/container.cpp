@@ -157,3 +157,41 @@ void use_container_set() {
     copy(C.lower_bound("Gruuuu"), C.upper_bound("May"), out);
     cout << endl;
 }
+
+#include <map>
+
+void use_container_map() {
+    using namespace std;
+
+    typedef int KeyType;
+    typedef pair<const KeyType, string> Pair;
+    //  multimap can have one-to-many relations
+    typedef multimap<KeyType, string> CodeMap;
+
+    CodeMap codes;
+    codes.insert(Pair(200, "Success"));
+    codes.insert(Pair(301, "Redirect"));
+    codes.insert(Pair(400, "Not Found"));
+    codes.insert(Pair(500, "Internal Error"));
+    codes.insert(Pair(403, "Not Allowed"));
+    //  insert same key 200
+    codes.insert(Pair(200, "Successful"));
+
+    cout << "Code 200: " << codes.count(200) << endl;
+    cout << "Code 500: " << codes.count(500) << endl;
+
+    cout << "\nCode\tDescription\n";
+    CodeMap::iterator it;
+    //  *iterator address
+    //  automatically sorted by key
+    for(it = codes.begin(); it != codes.end(); ++it) {
+        cout << (*it).first << "\t" << (*it).second << "\n";
+    }
+
+    pair<CodeMap::iterator, CodeMap::iterator> range = codes.equal_range(200);
+    cout << "\nStatus with code 200:\n";
+    for(it = range.first; it != range.second; ++it) {
+        //  output value
+        cout << (*it).second << endl;
+    }
+}

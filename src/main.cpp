@@ -173,6 +173,7 @@ int main() {
 //    use_iterator_insert();
 //    use_container_list();
     use_container_set();
+    use_container_map();
 
     return 0;
 }
