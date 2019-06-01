@@ -53,6 +53,7 @@
 #include "chapter16/3_standard_template_library/stl_vector.h"
 #include "chapter16/4_generic_programming/iterator.h"
 #include "chapter16/4_generic_programming/container.h"
+#include "chapter16/4_generic_programming/functor.h"
 
 int main() {
 //    using namespace std;
@@ -172,8 +173,9 @@ int main() {
 //    use_iterator_copy();
 //    use_iterator_insert();
 //    use_container_list();
-    use_container_set();
-    use_container_map();
+//    use_container_set();
+//    use_container_map();
+    use_functor();
 
     return 0;
 }
