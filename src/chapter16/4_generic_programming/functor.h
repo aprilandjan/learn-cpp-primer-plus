@@ -7,4 +7,6 @@
 
 void use_functor();
 
+void use_defined_functor();
+
 #endif //LEARN_FUNCTOR_H

@@ -66,3 +66,57 @@ void use_functor() {
     for_each(b.begin(), b.end(), outputInt);
     cout << endl << endl;
 }
+
+#include <vector>
+#include <functional>
+
+void outputDouble(double v) {
+    std::cout.widen(6);
+    std::cout << v << ' ';
+}
+
+/**
+ * use pre-defined functors in 'functional'
+ */
+void use_defined_functor() {
+    using namespace std;
+
+    const int LIM = 6;
+
+    double arr1[LIM] = {
+            29, 32, 10, 59, 42, 11,
+    };
+
+    double arr2[LIM] = {
+            150, 42, 11, 450, 0, 90,
+    };
+
+    vector<double> gr8(arr1, arr1 + LIM);
+
+    vector<double> m8(arr2, arr2 + LIM);
+
+    cout.setf(ios_base::fixed);
+    cout.precision(1);
+    cout << "gr8:\t";
+    for_each(gr8.begin(), gr8.end(), outputDouble);
+    cout << endl << endl;
+    cout << "m8:\t";
+    for_each(m8.begin(), m8.end(), outputDouble);
+    cout << endl << endl;
+
+    vector<double> sum(LIM);
+    //  similar to 'array.map()' in javascript
+    //  (gr8 + m8) in each index
+    transform(gr8.begin(), gr8.end(), m8.begin(), sum.begin(), plus<double>());
+    cout << "sum:\t";
+    for_each(sum.begin(), sum.end(), outputDouble);
+    cout << endl << endl;
+
+    vector<double> prod(LIM);
+    //  bind1st: make 'binary' into 'unary', curring
+    //  (gr8 * 2.5) in each index
+    transform(gr8.begin(), gr8.end(), prod.begin(), bind1st(multiplies<double>(), 2.5));
+    cout << "prod:\t";
+    for_each(prod.begin(), prod.end(), outputDouble);
+    cout << endl << endl;
+}

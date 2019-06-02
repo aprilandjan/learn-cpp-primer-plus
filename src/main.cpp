@@ -175,7 +175,8 @@ int main() {
 //    use_container_list();
 //    use_container_set();
 //    use_container_map();
-    use_functor();
+//    use_functor();
+    use_defined_functor();
 
     return 0;
 }
