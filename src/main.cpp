@@ -54,6 +54,7 @@
 #include "chapter16/4_generic_programming/iterator.h"
 #include "chapter16/4_generic_programming/container.h"
 #include "chapter16/4_generic_programming/functor.h"
+#include "chapter16/4_generic_programming/use_algorithm.h"
 
 int main() {
 //    using namespace std;
@@ -176,7 +177,8 @@ int main() {
 //    use_container_set();
 //    use_container_map();
 //    use_functor();
-    use_defined_functor();
+//    use_defined_functor();
+    string_sort();
 
     return 0;
 }
