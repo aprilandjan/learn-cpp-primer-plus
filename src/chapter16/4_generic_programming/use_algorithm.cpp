@@ -40,3 +40,45 @@ void string_sort() {
 
     cout << "Finish...\n";
 }
+
+#include <list>
+
+void showInt(int i) {
+    std::cout << i <<  ' ';
+}
+
+void try_list_remove()  {
+    using namespace std;
+
+    const int LIMIT = 10;
+    int arr[LIMIT] = {1, 3, 5, 7, 9, 8, 6, 4, 2, 0};
+    list<int> la(arr, arr + LIMIT);
+    list<int> lb(la);
+
+    cout << "Original list:\nla:\t";
+    for_each(la.begin(), la.end(), showInt);
+    cout << endl;
+
+    //  member function will adjust size automatically
+    la.remove(4);
+    cout << "After remove through member function remove():\n";
+    cout << "la:\t";
+    for_each(la.begin(), la.end(), showInt);
+    cout << endl << endl;
+
+    list<int>::iterator last;
+    //  STL remove won't adjust size
+    //  FIXME: seems remove 0 not working?
+    last = remove(lb.begin(), lb.end(), 1);
+    cout << "After remove through STL function remove():\n";
+    cout << "lb:\t";
+    for_each(lb.begin(), lb.end(), showInt);
+    cout << endl << endl;
+
+    //  delete a range
+    lb.erase(last, lb.end());
+    cout << "After erase:\n";
+    cout << "lb:\t";
+    for_each(lb.begin(), lb.end(), showInt);
+    cout << endl << endl;
+}

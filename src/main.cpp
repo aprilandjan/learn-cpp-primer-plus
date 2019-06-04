@@ -178,7 +178,8 @@ int main() {
 //    use_container_map();
 //    use_functor();
 //    use_defined_functor();
-    string_sort();
+//    string_sort();
+    try_list_remove();
 
     return 0;
 }

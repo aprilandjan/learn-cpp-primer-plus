@@ -7,4 +7,6 @@
 
 void string_sort();
 
+void try_list_remove();
+
 #endif //LEARN_USE_ALGORITHM_H
