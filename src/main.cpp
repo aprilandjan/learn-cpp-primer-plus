@@ -179,7 +179,8 @@ int main() {
 //    use_functor();
 //    use_defined_functor();
 //    string_sort();
-    try_list_remove();
+//    try_list_remove();
+    show_input_word_summary();
 
     return 0;
 }

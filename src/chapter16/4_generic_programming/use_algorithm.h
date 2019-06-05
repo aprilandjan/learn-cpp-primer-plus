@@ -9,4 +9,6 @@ void string_sort();
 
 void try_list_remove();
 
+void show_input_word_summary();
+
 #endif //LEARN_USE_ALGORITHM_H

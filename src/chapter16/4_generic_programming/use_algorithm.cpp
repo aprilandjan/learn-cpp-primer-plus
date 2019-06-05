@@ -82,3 +82,65 @@ void try_list_remove()  {
     for_each(lb.begin(), lb.end(), showInt);
     cout << endl << endl;
 }
+
+//======
+void display(const std::string & s) {
+    std::cout << s << "\t";
+}
+
+char toLower(char ch) {
+    return tolower(ch);
+}
+
+//  std::string doesn't have '.toLowerCase()' member?
+std::string & toLowerCase(std::string & str) {
+    std::transform(str.begin(), str.end(), str.begin(), toLower);
+    return str;
+}
+
+#include <vector>
+#include <set>
+#include <map>
+
+void show_input_word_summary() {
+    using namespace std;
+
+    vector<string> words;
+    cout << "Enter words (enter quit to quit):\n";
+    string input;
+    while(cin >> input && input != "quit") {
+        words.push_back(input);
+    }
+
+    cout << "You entered the following words:\n";
+    for_each(words.begin(), words.end(), display);
+    cout << endl;
+
+    // store in set, in order to sort & unique
+    set<string> word_set;
+    transform(
+            // range
+            words.begin(), words.end(),
+            // map and insert here
+            insert_iterator<set<string>>(word_set, word_set.begin()),
+            // map function
+            toLowerCase
+            );
+
+    cout << "\nAlphabetic list of words:\n";
+    for_each(word_set.begin(), word_set.end(), display);
+    cout << endl;
+
+    //  occurrance of each word
+    map<string, int> word_map;
+    set<string>::iterator si;
+    for(si = word_set.begin(); si != word_set.end(); si++) {
+        //  count occurrence in a range
+        word_map[*si] = count(words.begin(), words.end(), *si);
+    }
+
+    cout << "\nWord Frequency:\n";
+    for(si = word_set.begin(); si != word_set.end(); si++) {
+        cout << *si << ": " << word_map[*si] << endl;
+    }
+}
