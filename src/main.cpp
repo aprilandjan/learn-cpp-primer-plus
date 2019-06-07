@@ -55,6 +55,7 @@
 #include "chapter16/4_generic_programming/container.h"
 #include "chapter16/4_generic_programming/functor.h"
 #include "chapter16/4_generic_programming/use_algorithm.h"
+#include "chapter16/5_rest/rest_lib.h"
 
 int main() {
 //    using namespace std;
@@ -180,7 +181,8 @@ int main() {
 //    use_defined_functor();
 //    string_sort();
 //    try_list_remove();
-    show_input_word_summary();
+//    show_input_word_summary()
+    use_valarray();
 
     return 0;
 }
