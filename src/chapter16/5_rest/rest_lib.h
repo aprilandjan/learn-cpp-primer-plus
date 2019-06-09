@@ -6,5 +6,6 @@
 #define LEARN_REST_LIB_H
 
 void use_valarray();
+void use_initializer_list();
 
 #endif //LEARN_REST_LIB_H

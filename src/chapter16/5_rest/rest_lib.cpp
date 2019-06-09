@@ -43,3 +43,47 @@ void use_valarray() {
         cout << results[i] << endl;
     }
 }
+
+#include <initializer_list>
+
+double get_sum(const std::initializer_list<double> & list) {
+    double s = 0;
+    for(auto p = list.begin(); p != list.end(); p++) {
+        s += *p;
+    }
+    return s;
+}
+
+double get_avg(const std::initializer_list<double> & list) {
+    double s = 0;
+    int n = list.size();
+    double a = 0;
+    if (n > 0) {
+        for(auto p = list.begin(); p != list.end(); p++) {
+            s += *p;
+        }
+        a = s / n;
+    }
+    return a;
+}
+
+void use_initializer_list() {
+    using namespace std;
+
+    cout << "List 1: sum = " << get_sum({2, 3, 4});
+    cout << ", avg = " << get_avg({2, 3, 4}) << "\n";
+
+    initializer_list<double> list = {
+            1.1, 2.2, 3.3, 4.4, 5.5
+    };
+
+    cout << "List 2: sum = " << get_sum(list);
+    cout << ", avg = " << get_avg(list) << "\n";
+
+    list = {
+            12.3, 4.5, 6.7
+    };
+
+    cout << "List 3: sum = " << get_sum(list);
+    cout << ", avg = " << get_avg(list) << "\n";
+}

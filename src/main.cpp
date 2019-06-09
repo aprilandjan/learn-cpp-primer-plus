@@ -182,7 +182,8 @@ int main() {
 //    string_sort();
 //    try_list_remove();
 //    show_input_word_summary()
-    use_valarray();
+//    use_valarray();
+    use_initializer_list();
 
     return 0;
 }
