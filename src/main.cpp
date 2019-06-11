@@ -56,6 +56,7 @@
 #include "chapter16/4_generic_programming/functor.h"
 #include "chapter16/4_generic_programming/use_algorithm.h"
 #include "chapter16/5_rest/rest_lib.h"
+#include "chapter17/1_basic_io/use_cout_write.h"
 
 int main() {
 //    using namespace std;
@@ -183,7 +184,10 @@ int main() {
 //    try_list_remove();
 //    show_input_word_summary()
 //    use_valarray();
-    use_initializer_list();
+//    use_initializer_list();
+
+    //  chapter17
+    use_cout_write();
 
     return 0;
 }
