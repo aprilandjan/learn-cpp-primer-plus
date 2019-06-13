@@ -7,4 +7,6 @@
 
 void use_cout_write();
 
+void use_setf();
+
 #endif //LEARN_USE_COUT_WRITE_H

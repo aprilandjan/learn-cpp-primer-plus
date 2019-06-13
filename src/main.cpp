@@ -187,7 +187,8 @@ int main() {
 //    use_initializer_list();
 
     //  chapter17
-    use_cout_write();
+//    use_cout_write();
+    use_setf();
 
     return 0;
 }
