@@ -105,3 +105,20 @@ void use_setf() {
         cout << std::sqrt(double(n)) << "|\n";
     }
 }
+
+#include <iomanip>
+
+void use_io_manipulate() {
+    using namespace std;
+
+    cout << fixed << right;
+    cout << setw(6) << "N" << setw(14) << "sqrt root" << setw(15) << "fourth root\n";
+
+    double root;
+    for(int n = 0; n <= 100; n+= 10) {
+        root = sqrt(double(n));
+        cout << setw(6) << setfill('.') << n
+            << setw(14) << setfill(' ') << setprecision(3) << root
+            << setw(14) << setprecision(3) << sqrt(root) << "\n";
+    }
+}

@@ -9,4 +9,6 @@ void use_cout_write();
 
 void use_setf();
 
+void use_io_manipulate();
+
 #endif //LEARN_USE_COUT_WRITE_H

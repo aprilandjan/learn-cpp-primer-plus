@@ -188,7 +188,8 @@ int main() {
 
     //  chapter17
 //    use_cout_write();
-    use_setf();
+//    use_setf();
+    use_io_manipulate();
 
     return 0;
 }
