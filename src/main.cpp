@@ -57,6 +57,7 @@
 #include "chapter16/4_generic_programming/use_algorithm.h"
 #include "chapter16/5_rest/rest_lib.h"
 #include "chapter17/1_basic_io/use_cout_write.h"
+#include "chapter17/1_basic_io/various_input.h"
 
 int main() {
 //    using namespace std;
@@ -189,7 +190,8 @@ int main() {
     //  chapter17
 //    use_cout_write();
 //    use_setf();
-    use_io_manipulate();
+//    use_io_manipulate();
+    use_get_and_getline();
 
     return 0;
 }
