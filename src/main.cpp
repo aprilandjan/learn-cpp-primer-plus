@@ -191,7 +191,8 @@ int main() {
 //    use_cout_write();
 //    use_setf();
 //    use_io_manipulate();
-    use_get_and_getline();
+//    use_get_and_getline();
+    use_peek();
 
     return 0;
 }

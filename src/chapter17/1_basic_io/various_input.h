@@ -6,5 +6,6 @@
 #define LEARN_VARIOUS_INPUT_H
 
 void use_get_and_getline();
+void use_peek();
 
 #endif //LEARN_VARIOUS_INPUT_H

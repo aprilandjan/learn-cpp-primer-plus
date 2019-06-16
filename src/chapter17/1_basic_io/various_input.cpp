@@ -37,3 +37,38 @@ void use_get_and_getline() {
     cin.get(ch);
     cout << "The next input char is " << ch << endl;
 }
+
+void use_peek() {
+    using namespace std;
+
+    char ch;
+    while(cin.get(ch)) {    //  stop when EOF
+        if (ch != '#') {
+            cout << ch << "-";
+        } else {
+            //  make '#' back into stream
+            cin.putback(ch);
+            break;
+        }
+    }
+
+    if (!cin.eof()) {
+        cin.get(ch);    // always '#'
+        cout << endl << ch << " is the next char.\n";
+    } else {
+        cout << "EOF reached.\n";
+        exit(0);
+    }
+
+    //  read until meet '#'
+    while(cin.peek() != '#') {
+        cin.get(ch);
+        cout << ch;
+    }
+    if (!cin.eof()) {
+        cin.get(ch);    //  always '#'
+        cout << endl << ch << " is the next char.\n";
+    } else {
+        cout << "EOF reached.\n";
+    }
+}
