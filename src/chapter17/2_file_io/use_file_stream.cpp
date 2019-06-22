@@ -40,3 +40,59 @@ void basic_file_stream() {
     cout << "\n";
     fin.close();
 }
+
+#include <cstdlib> // for exit()
+
+/**
+ * count word as executable
+ * @param argc argument count
+ * @param argv argument values
+ */
+void word_count(int argc, char * argv[]) {
+    using namespace std;
+
+    argc = 2;
+    char *f1 = "justify";
+    char *f2 = "number.txt";
+    char *f3 = "tobuy.txt";
+    argv = {
+            &f1,
+    };
+
+    //  no arguments
+    if (argc == 1) {
+        cerr << "Usage: " << argv[0] << " filenames[s]\n";
+        exit(EXIT_FAILURE);
+    }
+    cout << "ok, processing...\n";
+//    getchar();
+
+    ifstream fin;
+    long count;
+    long total = 0;
+    char ch;
+
+    //  iterate through args as filename
+    for(int idx = 1; idx < argc; idx++) {
+//        auto filename = argv[idx];
+        char *filename = argv[idx];
+
+        fin.open(filename);
+        if (!fin.is_open()) {
+            cerr << "Cannot open " << filename << endl;
+            fin.clear();
+            continue;
+        }
+        count = 0;
+        //  read file
+        while(fin.get(ch)) {
+            count++;
+        }
+        cout << count << " characters in " << filename << endl;
+        total += count;
+        fin.clear();
+        fin.close();
+    }
+
+    cout << total << " characters in all files\n";
+}

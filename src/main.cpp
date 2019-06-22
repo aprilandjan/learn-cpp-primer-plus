@@ -60,7 +60,7 @@
 #include "chapter17/1_basic_io/various_input.h"
 #include "chapter17/2_file_io/use_file_stream.h"
 
-int main() {
+int main(int argc, char * argv[]) {
 //    using namespace std;
 
 //    pointer();
@@ -194,7 +194,8 @@ int main() {
 //    use_io_manipulate();
 //    use_get_and_getline();
 //    use_peek();
-    basic_file_stream();
+//    basic_file_stream();
+    word_count(argc, argv);
 
     return 0;
 }
