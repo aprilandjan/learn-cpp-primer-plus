@@ -195,7 +195,8 @@ int main(int argc, char * argv[]) {
 //    use_get_and_getline();
 //    use_peek();
 //    basic_file_stream();
-    word_count(argc, argv);
+//    word_count(argc, argv);
+    binary_file();
 
     return 0;
 }

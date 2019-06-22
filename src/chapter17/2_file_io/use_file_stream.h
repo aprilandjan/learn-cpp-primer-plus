@@ -10,4 +10,6 @@ void basic_file_stream();
 //  accept executable arguments
 void word_count(int argc, char * argv[]);
 
+void binary_file();
+
 #endif //LEARN_USE_FILE_STREAM_H
