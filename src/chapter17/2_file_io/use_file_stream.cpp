@@ -106,14 +106,20 @@ void eatline() {
         continue;
 }
 
+struct planet {
+    char name[20];
+    double population;
+    double gravity;
+};
+
+const char * filename = "planets.dat";
+
 void binary_file() {
     struct planet {
         char name[20];
         double population;
         double gravity;
     };
-
-    const char * filename = "planets.dat";
 
     using namespace std;
     planet p1;
@@ -177,4 +183,107 @@ void binary_file() {
     }
 
     cout << "\n";
+}
+
+void random_access() {
+    using namespace std;
+
+    planet p;
+    cout << fixed;
+
+    //  show file content
+    //  using fstream, which can used to input & output
+    fstream fs;
+    fs.open(filename, ios_base::binary | ios_base::in | ios_base::out);
+
+    //  count data lines
+    int lines = 0;
+    if (fs.is_open()) {
+        //  set to beginning of the file
+        fs.seekg(0);
+        cout << "Here are the current contents of " << filename << ":\n";
+        while(fs.read((char *) &p, sizeof p)) {
+            lines++;
+            cout << lines << ": ";
+            cout << setw(20) << p.name << ": "
+                 << setprecision(0) << setw(12) << p.population
+                 << setprecision(2) << setw(6) << p.gravity
+                 << endl;
+
+        }
+        if (fs.eof()) {
+            fs.clear(); // clear eof flag for latter usage
+        } else {
+            cerr << "Error in reading " << filename << "...\n";
+            exit(EXIT_FAILURE);
+        }
+    } else {
+        cerr << "Error when open file " << filename << "...\n";
+        exit(EXIT_FAILURE);
+    }
+
+    //  modify one record line
+    cout << "Enter the record number you want to modify:\n";
+    long line;
+    cin >> line;
+    eatline();
+
+    if (line < 1 || line > lines) {
+        cerr << "Invalid record number. valid range is: [1, " << lines << "].\n";
+        exit(EXIT_FAILURE);
+    }
+
+    //  calc where to read
+    streampos place = (line - 1)  * sizeof p;
+    fs.seekg(place);
+    if (fs.fail()) {
+        cerr << "Error when seek at position " << place << "...\n";
+        exit(EXIT_FAILURE);
+    }
+
+    fs.read((char *) &p, sizeof p);
+    cout << "You select:\n";
+    cout << line << ": ";
+    cout << setw(20) << p.name << ": "
+         << setprecision(0) << setw(12) << p.population
+         << setprecision(2) << setw(6) << p.gravity
+         << endl;
+
+    if (fs.eof()) {
+        fs.clear();
+    }
+
+    cout << "Enter planet name:\n";
+    cin.get(p.name, 20);
+    eatline();
+    cout << "Enter planet population:\n";
+    cin >> p.population;
+    cout << "Enter planet gravity:\n";
+    cin >> p.gravity;
+    eatline();
+    //  move file output place to target place
+    fs.seekp(place);
+    //  turn p1 address to char*
+    fs.write((char *) &p, sizeof p) << flush;
+    if (fs.fail()) {
+        cerr << "Error when attemted write...\n";
+        exit(EXIT_FAILURE);
+    }
+
+    //  show modified content
+    lines = 0;
+    fs.seekg(0);
+    cout << "After modification:\n";
+    while(fs.read((char *) &p, sizeof p)) {
+        lines++;
+        cout << lines << ": ";
+        cout << setw(20) << p.name << ": "
+             << setprecision(0) << setw(12) << p.population
+             << setprecision(2) << setw(6) << p.gravity
+             << endl;
+
+    }
+
+    fs.close();
+    cout << "finish...\n";
 }
