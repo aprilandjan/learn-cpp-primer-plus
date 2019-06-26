@@ -59,6 +59,7 @@
 #include "chapter17/1_basic_io/use_cout_write.h"
 #include "chapter17/1_basic_io/various_input.h"
 #include "chapter17/2_file_io/use_file_stream.h"
+#include "chapter17/3_incore_formatting/use_sstream.h"
 
 int main(int argc, char * argv[]) {
 //    using namespace std;
@@ -197,7 +198,8 @@ int main(int argc, char * argv[]) {
 //    basic_file_stream();
 //    word_count(argc, argv);
 //    binary_file();
-    random_access();
+//    random_access();
+    use_sstream();
 
     return 0;
 }
