@@ -60,6 +60,7 @@
 #include "chapter17/1_basic_io/various_input.h"
 #include "chapter17/2_file_io/use_file_stream.h"
 #include "chapter17/3_incore_formatting/use_sstream.h"
+#include "chapter18/1_right_value/use_right_value_reference.h"
 
 int main(int argc, char * argv[]) {
 //    using namespace std;
@@ -199,7 +200,10 @@ int main(int argc, char * argv[]) {
 //    word_count(argc, argv);
 //    binary_file();
 //    random_access();
-    use_sstream();
+//    use_sstream();
+
+    //  chapter18
+    use_right_value_reference();
 
     return 0;
 }

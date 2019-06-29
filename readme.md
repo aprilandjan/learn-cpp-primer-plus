@@ -73,3 +73,5 @@
 ### chapter17
 
 1. [basic io](./src/chapter17/1_basic_io/use_cout_write.cpp)
+2. [file io](./src/chapter17/2_file_io/use_file_stream.cpp)
+3. [incore formatting](./src/chapter17/3_incore_formatting/use_sstream.cpp)
