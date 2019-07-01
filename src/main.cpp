@@ -61,6 +61,7 @@
 #include "chapter17/2_file_io/use_file_stream.h"
 #include "chapter17/3_incore_formatting/use_sstream.h"
 #include "chapter18/1_right_value/use_right_value_reference.h"
+#include "chapter18/2_move_semantics/use_move_semantics.h"
 
 int main(int argc, char * argv[]) {
 //    using namespace std;
@@ -203,7 +204,8 @@ int main(int argc, char * argv[]) {
 //    use_sstream();
 
     //  chapter18
-    use_right_value_reference();
+//    use_right_value_reference();
+    use_
 
     return 0;
 }
