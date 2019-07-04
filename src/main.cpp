@@ -205,7 +205,7 @@ int main(int argc, char * argv[]) {
 
     //  chapter18
 //    use_right_value_reference();
-    use_
+    test_useless();
 
     return 0;
 }
