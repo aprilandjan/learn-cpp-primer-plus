@@ -24,6 +24,8 @@ namespace L18_1 {
         Useless(Useless && f); // move constructor, Useless(u + v);
         ~Useless();
         Useless operator+(const Useless & f) const;     // u + v
+        Useless & operator=(const Useless & f); //  m = v
+        Useless & operator=(Useless && f);  //  move assignment, u = v + w
         void showData() const;
     };
 
@@ -108,6 +110,39 @@ namespace L18_1 {
         return temp;
     }
 
+    Useless& Useless::operator=(const L18_1::Useless &f) {
+        cout << "copy assignment operator called:\n";
+        if (this == & f) {
+            return *this;
+        }
+
+        delete [] pc;
+        n = f.n;
+        pc = new char[n];
+        for(int i = 0; i < n; i++) {
+            pc[i] = f.pc[i];
+        }
+        return *this;
+    }
+
+    Useless& Useless::operator=(L18_1::Useless &&f) {
+        cout << "move assignment operator called:\n";
+        //  wtf could this be same?
+        if (this == &f) {
+            return * this;
+        }
+
+        delete [] pc;
+        n = f.n;
+        //  transfer ownership
+        pc = f.pc;
+
+        //  clear f's content
+        f.n = 0;
+        f.pc = nullptr;
+        return *this;
+    }
+
     void Useless::showObject() const {
         cout << "list size: " << n << ", data address: " << (void *) pc << endl;
     }
@@ -124,6 +159,8 @@ namespace L18_1 {
         cout << endl;
     }
 }
+
+#include <utility>
 
 void test_useless() {
     using namespace L18_1;
@@ -145,5 +182,15 @@ void test_useless() {
     cout << "\nThree: \n";
     three.showData();
     cout << "\nFour: \n";
+    four.showData();
+
+    //  use std::move
+    cout << "four = move(one):\n";
+    //  this will call 'copy assignment'
+    four = one;
+    four.showData();
+    //  this will call 'move assignment'
+    //  std::move make left-value(one) into right-value
+    four = std::move(one);
     four.showData();
 }
