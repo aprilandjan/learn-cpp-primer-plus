@@ -62,6 +62,7 @@
 #include "chapter17/3_incore_formatting/use_sstream.h"
 #include "chapter18/1_right_value/use_right_value_reference.h"
 #include "chapter18/2_move_semantics/use_move_semantics.h"
+#include "chapter18/3_lambda/use_lambda.h"
 
 int main(int argc, char * argv[]) {
 //    using namespace std;
@@ -205,7 +206,8 @@ int main(int argc, char * argv[]) {
 
     //  chapter18
 //    use_right_value_reference();
-    test_useless();
+//    test_useless();
+    use_lambda_expressions();
 
     return 0;
 }
