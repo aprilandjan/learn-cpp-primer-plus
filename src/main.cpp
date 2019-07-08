@@ -207,7 +207,8 @@ int main(int argc, char * argv[]) {
     //  chapter18
 //    use_right_value_reference();
 //    test_useless();
-    use_lambda_expressions();
+//    use_lambda_expressions();
+    lambda_with_captured_vars();
 
     return 0;
 }
