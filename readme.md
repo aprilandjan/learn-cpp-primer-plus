@@ -80,3 +80,5 @@
 
 1. [right value](./src/chapter18/1_right_value/use_right_value_reference.cpp)
 2. [move semantics](./src/chapter18/2_move_semantics/use_move_semantics.cpp)
+3. [lambda expression](./src/chapter18/3_lambda/use_lambda.cpp)
+4. [wrapper](./src/chapter18/4_wrapper/use_wrapper.cpp)
