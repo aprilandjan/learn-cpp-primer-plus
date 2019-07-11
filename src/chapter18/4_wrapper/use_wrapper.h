@@ -6,9 +6,9 @@
 #define LEARN_USE_WRAPPER_H
 
 void wrapper_of_callable();
+#include <iostream>
 
 namespace L18_4 {
-    #include <iostream>
 
     template<typename T, typename F>
     T use_f(T v, F f) {
@@ -18,6 +18,7 @@ namespace L18_4 {
         return f(v);
     }
 
+    //  functor
     class Fp {
     private:
         double _z;
