@@ -64,6 +64,7 @@
 #include "chapter18/2_move_semantics/use_move_semantics.h"
 #include "chapter18/3_lambda/use_lambda.h"
 #include "chapter18/4_wrapper/use_wrapper.h"
+#include "chapter18/5_variadic_template/use_arguments_and_rest.h"
 
 int main(int argc, char * argv[]) {
 //    using namespace std;
@@ -210,7 +211,8 @@ int main(int argc, char * argv[]) {
 //    test_useless();
 //    use_lambda_expressions();
 //    lambda_with_captured_vars();
-    wrapper_of_callable();
+//    wrapper_of_callable();
+    use_parameter_pack();
 
     return 0;
 }
